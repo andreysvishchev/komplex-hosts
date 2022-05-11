@@ -1,0 +1,52 @@
+.registration {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $black;
+
+  &__title {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 32px;
+    color: $blue;
+  }
+
+  &__progress-list {
+    display: flex;
+    align-items: center;
+    margin-bottom: 32px;
+  }
+
+  &__progress-item {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: $gray;
+    margin-right: 10px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &--active {
+      width: 14px;
+      height: 14px;
+      background-color: $green;
+    }
+  }
+
+  &__counterparty {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 25px;
+  }
+
+  &__headline {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 24px;
+  }
+}
