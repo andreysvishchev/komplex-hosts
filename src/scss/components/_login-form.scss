@@ -1,0 +1,316 @@
+.login-form {
+  max-width: 368px;
+  width: 100%;
+  margin: 0 auto;
+
+  &__label {
+    display: block;
+    position: relative;
+    margin-bottom: 16px;
+  }
+
+
+  &__title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 8px;
+  }
+
+  &__input {
+    margin-bottom: 16px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: $black;
+    width: 100%;
+    padding: 8px 16px;
+    border: 1px solid $gray;
+    border-radius: 4px;
+    outline: none;
+    transition: all .2s ease-in-out;
+
+    &::placeholder {
+      color: $silver-text;
+    }
+
+    &:focus {
+      // border-color: $blue;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    &--error {
+      background-color: $red;
+    }
+
+    &--no-margin {
+      margin-bottom: 0;
+    }
+  }
+
+  &__column {
+    &--series {
+      width: 130px;
+      margin-right: 16px;
+    }
+
+    &--home {
+      margin-right: 16px;
+    }
+
+    &--index {
+      max-width: 172px;
+      min-width: 172px;
+      margin-right: 16px;
+    }
+
+    &--select {
+      width: 100%;
+    }
+
+  }
+
+  &__help {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: $blue;
+    margin-left: 24px;
+  }
+
+  &__recomendation {
+    margin-top: 8px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: $blue;
+  }
+
+  &__pasword-type {
+    position: absolute;
+    top: 13px;
+    right: 15px;
+    width: 16px;
+    height: 12px;
+    background-image: url('../../img/invisible-pasword.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+  }
+
+  &__btn {
+    padding: 8px 24px;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    cursor: pointer;
+
+    &--light {
+      border: 1px solid $blue;
+      color: $blue;
+      background-color: transparent;
+    }
+
+    &--blue {
+      border: 1px solid transparent;
+      color: $white;
+      background-color: $blue;
+    }
+
+    &--right {
+      margin-left: auto;
+      display: block;
+      margin-top: 28px;
+    }
+
+    &--end {
+
+      padding: 8px 13px;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+  }
+
+  &__textarea {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: $black;
+    border-radius: 4px;
+    border: 1px solid $gray;
+    padding: 8px 16px;
+    outline: none;
+    resize: none;
+    min-height: 80px;
+    width: 100%;
+    margin-bottom: 16px;
+
+    &::placeholder {
+      color: $silver-text;
+    }
+
+    &:focus {
+      // border-color: $blue;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    &--error {
+      background-color: $red;
+    }
+  }
+
+  &__row {
+    display: flex;
+
+    &--enter {
+      margin-top: 28px;
+      align-items: center;
+    }
+  }
+
+  &__scan {
+    margin-bottom: 28px;
+  }
+
+  &__checkbox-span {
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
+    position: relative;
+    cursor: pointer;
+    display: block;
+    border-radius: 2px;
+    border: 1px solid $gray;
+
+    &::after {
+      content: '';
+      position: absolute;
+      background-image: url('../../img/checkbox.svg');
+      width: 15px;
+      height: 14px;
+      top: 50%;
+      right: 50%;
+      transform: translateX(50%) translateY(-50%);
+      opacity: 0;
+      transition: opacity .1s ease-in-out;
+    }
+  }
+
+  &__checkbox-input:checked .login-form__checkbox-span::after {
+    opacity: 1;
+  }
+}
+
+
+.choices {
+  width: 100%;
+
+  &::after {}
+
+  &__inner {
+    border: 1px solid $gray;
+    border-radius: 4px;
+    background-color: $white;
+    min-height: 42px;
+  }
+
+  &__placeholder {
+    opacity: 1;
+    color: $silver-text;
+    font-weight: 400;
+    font-size: 16px;
+  }
+
+  &__list {
+    scrollbar-color: #6969dd;
+    scrollbar-width: thin;
+
+    &--single {
+      padding: 3px 16px 3px 4px;
+      color: $black;
+      font-weight: 400;
+      font-size: 16px;
+    }
+  }
+}
+
+.choices.is-focused.is-open {
+  .choices__inner {
+    border: 1px solid $blue;
+  }
+}
+
+.choices.is-focused {
+  .choices__inner {
+    border: 1px solid $gray;
+  }
+}
+
+.choices__list.choices__list--dropdown.is-active {
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05);
+  border: none;
+  border-radius: 4px;
+  padding: 0;
+}
+
+.choices__item--selectable.is-highlighted::after {
+  display: none;
+}
+
+.choices__list--dropdown .choices__item--selectable,
+.choices__list[aria-expanded] .choices__item--selectable {
+  padding-right: 0;
+}
+
+.choices__list--dropdown .choices__item--selectable.is-highlighted,
+.choices__list[aria-expanded] .choices__item--selectable.is-highlighted {
+  background-color: rgba(0, 182, 244, .1);
+}
+
+.choices__list--dropdown .choices__item--selectable,
+.choices__list[aria-expanded] .choices__item--selectable {
+  color: $black;
+  padding: 4px 15px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.choices__list--dropdown,
+.choices__list[aria-expanded] {
+  margin-top: 4px;
+  border-radius: 4px;
+}
+
+.choices__list::-webkit-scrollbar {
+  width: 4px;
+  background-color: transparent;
+}
+
+.choices__list::-webkit-scrollbar-thumb {
+  background-color: $blue;
+  border-radius: 10px;
+  width: 3px;
+  height: 27px;
+}
+
+.choices[data-type*=select-one]::after {
+  background-image: url('../../img/arrow.svg');
+  width: 10px;
+  height: 5px;
+  border: none;
+  transform: rotate(180deg);
+  transition: transform .1s;
+}
+
+.choices[data-type*=select-one].is-open::after {
+  margin-top: 0;
+  transform: rotate(0deg);
+}

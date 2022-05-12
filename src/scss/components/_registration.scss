@@ -48,5 +48,15 @@
     font-size: 16px;
     line-height: 24px;
     margin-bottom: 24px;
+    text-align: center;
+  }
+
+  &__tab {
+    width: 100%;
+    display: none;
+
+    &--active {
+      display: block;
+    }
   }
 }

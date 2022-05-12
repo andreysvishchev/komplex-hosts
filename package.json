@@ -54,6 +54,7 @@
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
+    "choices.js": "^10.1.0",
     "graph-modal": "^1.0.3"
   }
 }
