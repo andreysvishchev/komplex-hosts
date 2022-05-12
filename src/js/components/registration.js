@@ -5,23 +5,38 @@ const nextStep = document.getElementById('nextBtn')
 
 let currentStep = 0
 
-
-function showPage(n) {
-
-
-  registrationSteps[n].style.display = 'block'
-
-  if (n == (registrationSteps.length - 1)) {
-    console.log(123);
-
+function showStep() {
+  if (currentStep == registrationSteps.length - 1) {
+    nextStep.innerText = 'Заверите регистрацию'
+  } else {
+    nextStep.innerText = 'Далее'
   }
+
+  registrationSteps.forEach(el => {
+    el.classList.remove('registration__tab--active')
+  })
+  registrationSteps[currentStep].classList.add('registration__tab--active')
 }
 
 btnStep.forEach(el => {
   el.addEventListener('click', (e) => {
-    self = e.currentTarget
-    registrationSteps[currentStep].style.display = 'none'
-    currentStep = currentStep++
-    self.showPage(currentStep)
+    const self = e.currentTarget
+    if (el.classList.contains('prevBtn')) {
+      currentStep--
+    }
+    if (el.classList.contains('nextBtn')) {
+      currentStep++
+    }
+    showStep()
   })
 })
+
+// nextStep.addEventListener('click', () => {
+//   currentStep++
+//   showStep()
+// })
+
+// prevStep.addEventListener('click', () => {
+//   currentStep--
+//   showStep()
+// })
