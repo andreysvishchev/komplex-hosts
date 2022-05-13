@@ -17,9 +17,16 @@ h6,
 ul,
 li,
 p,
+a,
+ul,
+li,
 button {
   margin: 0;
   padding: 0;
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: inherit;
 }
 
 ul,
@@ -36,6 +43,11 @@ ol {
   margin: 0;
   min-width: 320px;
   font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: $black;
+
 }
 
 .visually-hidden {
@@ -53,4 +65,39 @@ ol {
   max-width: 1470px;
   padding: 0 15px;
   margin: 0 auto;
+}
+
+.button {
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background .2s ease-in-out;
+
+  &.light {
+    border: 1px solid $blue;
+    color: $blue;
+    background-color: transparent;
+  }
+
+  &.blue {
+    border: 1px solid transparent;
+    color: $white;
+    background-color: $blue;
+  }
+
+  &.margin-right {
+    margin-left: auto;
+    display: block;
+    margin-top: 28px;
+  }
+
+  &.end {
+    padding: 8px 13px;
+  }
+
+  &.disabled {
+    background-color: $gray;
+    pointer-events: none;
+  }
 }

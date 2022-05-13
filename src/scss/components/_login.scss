@@ -1,18 +1,23 @@
 .login {
   display: flex;
-  padding-left: calc((100% - 1470px) / 2);
-
-  // &__wrap {}
 
   &__inner {
-    flex-shrink: 0;
+    display: flex;
     width: calc(100% - 580px);
-    min-width: 480px;
-    padding: 170px 15px 75px 15px;
+    padding: 175px 0 75px;
+    position: relative;
   }
-
 }
 
+.log-out {
+  font-weight: 500;
+  color: $black;
+  text-decoration: none;
+  position: absolute;
+  top: 86px;
+  right: 74px;
+
+}
 
 
 @media (max-width: 1240px) {
