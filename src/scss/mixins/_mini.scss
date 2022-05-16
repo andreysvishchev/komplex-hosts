@@ -1,8 +1,8 @@
 /* stylelint-disable */
 
-@mixin bg-cover {
+@mixin bg-contain {
   background-position: center;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
 }
 
