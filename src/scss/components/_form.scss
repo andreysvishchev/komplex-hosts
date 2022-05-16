@@ -1,4 +1,4 @@
-.login-form {
+.form {
   max-width: 368px;
   width: 100%;
   margin: 0 auto;
@@ -64,7 +64,7 @@
       width: 100%;
     }
 
-    &.margin-left {
+    &--margin-left {
       margin-left: 16px;
     }
   }
@@ -129,7 +129,7 @@
       align-items: center;
     }
 
-    &.agreement {
+    &--agreement {
       margin-top: 27px;
     }
   }
@@ -162,7 +162,7 @@
     }
   }
 
-  &__checkbox-input:checked+.login-form__checkbox-span::after {
+  &__checkbox-input:checked+.form__checkbox-span::after {
     opacity: 1;
   }
 
@@ -200,7 +200,7 @@
     margin-bottom: 34px;
   }
 
-  &__radio+.login-form__radio {
+  &__radio+.form__radio {
     margin-left: 50px;
   }
 
@@ -236,12 +236,71 @@
     }
   }
 
-  &__radio-input:checked+.login-form__radio-span::before {
+  &__radio-input:checked+.form__radio-span::before {
     opacity: 1;
   }
 
+
+
   &__additional-address {
     display: none;
+  }
+
+  &__file {
+    padding-left: 90px;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 72px;
+      height: 48px;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    &--one {
+      &::before {
+        background-image: url('../../img/scan-1.svg');
+      }
+    }
+
+    &--two {
+      &::before {
+        background-image: url('../../img/scan-2.svg');
+      }
+    }
+  }
+
+  &__file-title {
+    color: $silver-text;
+  }
+
+  &__file-label {
+    cursor: pointer;
+    color: $blue;
+    text-decoration: underline;
+    transition: color .2s ease-in-out;
+
+    &.filled {
+      color: $black;
+      text-decoration: none;
+    }
+  }
+
+  &__file-clear {
+    background-color: transparent;
+    color: $blue;
+    border: none;
+    margin-left: 15px;
+    display: none;
+    cursor: pointer;
+
+    &.filled {
+      display: inline-block;
+    }
   }
 }
 

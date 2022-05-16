@@ -1,77 +1,111 @@
-const registrationSteps = document.querySelectorAll('.registration__tab')
-const btnStep = document.querySelectorAll('.registration__button')
-const prevStep = document.querySelector('.prev-btn')
-const nextStep = document.querySelector('.next-btn')
-const progressItem = document.querySelectorAll('.registration__progress-item')
+const registartionTabs = document.querySelector('.registration__tabs')
+const countepartyItem = document.querySelectorAll('.registration__tab')
+const countepartyContent = document.querySelectorAll('.registration__content')
 
-let currentStep = 0
+if (countepartyItem) {
+  countepartyItem.forEach(el => {
+    el.addEventListener('click', (e) => {
+      const counterpartyPath = e.currentTarget.dataset.counterpartyPath
+      registartionTabs.style.display = "none"
+      document.querySelector(`[data-counterparty-target="${counterpartyPath}"]`).classList.add('active')
+    })
+  })
+}
 
-function showStep() {
+const init = (parentSelector) => {
+  const parent = document.querySelector(parentSelector)
+  const registrationSteps = parent.querySelectorAll('.registration__step')
+  const prevStep = parent.querySelector('.prev-btn')
+  const nextStep = parent.querySelector('.next-btn')
+  const progressItems = parent.querySelectorAll('.registration__progress-item')
 
-  if (currentStep == registrationSteps.length - 1) {
-    nextStep.innerText = 'Завершить регистрацию'
-    nextStep.classList.add('end')
-    nextStep.classList.add('disabled')
-  } else {
-    nextStep.innerText = 'Далее'
-    nextStep.classList.remove('end')
-    nextStep.classList.remove('disabled')
-    agreementCheckbox.checked = false
+  let currentStep = 0
+
+  function showStep() {
+
+    if (currentStep == registrationSteps.length - 1) {
+      nextStep.innerText = 'Завершить регистрацию'
+      nextStep.classList.add('end')
+      nextStep.classList.add('disabled')
+    } else {
+      nextStep.innerText = 'Далее'
+      nextStep.classList.remove('end')
+      nextStep.classList.remove('disabled')
+      agreementCheckbox.checked = false
+    }
+
+    progressItems.forEach((el, i) => {
+      if (i < currentStep) {
+        el.classList.add('passed')
+      }
+      if (i > currentStep) {
+        el.classList.remove('passed')
+      }
+      el.classList.remove('active')
+    })
+    progressItems[currentStep].classList.add('active')
+
+    registrationSteps.forEach(el => {
+      el.classList.remove('active')
+    })
+    registrationSteps[currentStep].classList.add('active')
   }
 
-  progressItem.forEach(el => {
-    el.classList.remove('active')
-  })
-  progressItem[currentStep].classList.add('active')
-  registrationSteps.forEach(el => {
-    el.classList.remove('active')
-  })
-  registrationSteps[currentStep].classList.add('active')
-}
-
-btnStep.forEach(el => {
-  el.addEventListener('click', () => {
-
-    if (el.classList.contains('prev-btn')) {
-      if (currentStep == 0) {
-        return
-      }
-      currentStep--
+  prevStep.addEventListener('click', () => {
+    if (currentStep == 0) {
+      registartionTabs.style.display = "block"
+      countepartyContent.forEach(el => {
+        el.classList.remove('active')
+      })
+      return
     }
-    if (el.classList.contains('next-btn')) {
-      if (currentStep == registrationSteps.length - 1) {
-        return
-      }
-      currentStep++
-    }
+    currentStep--
     showStep()
   })
-})
 
-const regError = document.querySelector('.registration__error')
-const errorCloseBtn = document.querySelector('.registration__error-close')
-errorCloseBtn.addEventListener('click', () => {
-  regError.classList.remove('is-open')
-})
+  nextStep.addEventListener('click', () => {
+    if (currentStep == registrationSteps.length - 1) {
+      new GraphModal().open('registration-complete');
+      return
+    }
 
-const radioTrue = document.querySelector(`[data-add-address="true"]`)
-const radioFalse = document.querySelector(`[data-add-address="false"]`)
-const additionalAddress = document.querySelector('.login-form__additional-address')
-
-if (radioTrue) {
-  radioTrue.addEventListener('click', () => {
-    additionalAddress.style.display = 'none'
+    currentStep++
+    showStep()
   })
-}
-if (radioFalse) {
-  radioFalse.addEventListener('click', () => {
-    additionalAddress.style.display = 'block'
-  })
+
+  const agreementCheckbox = parent.querySelector(`[data-inpt="check"]`)
+
+  if (agreementCheckbox) {
+    agreementCheckbox.addEventListener('click', () => {
+      const endBtn = parent.querySelector('.end')
+      endBtn.classList.toggle('disabled')
+    })
+  }
+
+  const regError = parent.querySelector('.registration__error')
+  const errorCloseBtn = parent.querySelector('.registration__error-close')
+  if (errorCloseBtn) {
+    errorCloseBtn.addEventListener('click', () => {
+      regError.classList.remove('is-open')
+    })
+  }
+
+  const radioTrue = parent.querySelector(`[data-add-address="true"]`)
+  const radioFalse = parent.querySelector(`[data-add-address="false"]`)
+  const additionalAddress = parent.querySelector('.form__additional-address')
+
+  if (radioTrue) {
+    radioTrue.addEventListener('click', () => {
+      additionalAddress.style.display = 'none'
+    })
+  }
+  if (radioFalse) {
+    radioFalse.addEventListener('click', () => {
+      additionalAddress.style.display = 'block'
+    })
+  }
 }
 
-const agreementCheckbox = document.querySelector(`[data-inpt="check"]`)
-
-agreementCheckbox.addEventListener('click', () => {
-  const endBtn = document.querySelector('.end')
-  endBtn.classList.toggle('disabled')
-})
+init('[data-counterparty-target="ind"]')
+init('[data-counterparty-target="ind-ent"]')
+init('[data-counterparty-target="ent"]')

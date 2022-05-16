@@ -1,4 +1,4 @@
 import './components/tabs'
-import './components/input'
-import './components/select'
+import './components/login'
+import './components/elements'
 import './components/registration'

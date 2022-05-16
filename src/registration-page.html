@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html')
+
+<body class="page__body">
+
+  <div class="page__section">
+
+    @include('partials/aside.html')
+
+    <div class="registration">
+
+      <div class="registration__tabs">
+        <h2 class="registration__title">Регистрация контрагента</h2>
+        <div class="registration__tab" data-counterparty-path="ind">
+          <div class="registration__tab-icon">
+            <svg width="49" height="52" viewBox="0 0 49 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M32.9887 28.6C37.1296 25.7892 39.8901 21.0108 39.8901 15.6C39.8211 7.02703 32.9887 0 24.5 0C16.0113 0 9.17887 7.02703 9.17887 15.6C9.17887 21.0108 11.9394 25.7892 16.0803 28.6C6.69437 32.1135 0 41.2486 0 52H4.07183C4.07183 40.5459 13.2507 31.2 24.5 31.2C35.7493 31.2 44.9282 40.5459 44.9282 52H49C49 41.2486 42.3056 32.1135 32.9887 28.6ZM24.5 27.0541C18.2887 27.0541 13.2507 21.9243 13.2507 15.6C13.2507 9.27568 18.2887 4.14595 24.5 4.14595C30.7113 4.14595 35.7493 9.27568 35.7493 15.6C35.7493 21.9243 30.7113 27.0541 24.5 27.0541Z"
+                fill="#DEDEDE" />
+            </svg>
+          </div>
+          <h4 class="registration__tab-title">Физическое лицо</h4>
+        </div>
+        <div class="registration__tab" data-counterparty-path="ind-ent">
+          <div class="registration__tab-icon">
+            <svg width="49" height="51" viewBox="0 0 49 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_2841_45)">
+                <path
+                  d="M32.9887 28.0493C35.1022 26.6567 36.8382 24.7639 38.0422 22.5395C39.2463 20.315 39.8811 17.8279 39.8901 15.2993C39.8901 11.2324 38.2723 7.33197 35.3926 4.4562C32.5128 1.58043 28.6071 -0.0351562 24.5345 -0.0351562C20.4619 -0.0351562 16.5562 1.58043 13.6764 4.4562C10.7967 7.33197 9.17887 11.2324 9.17887 15.2993C9.18793 17.8279 9.82273 20.315 11.0268 22.5395C12.2308 24.7639 13.9668 26.6567 16.0803 28.0493C11.3691 29.7699 7.30059 32.8936 4.42473 36.9981C1.54887 41.1026 0.00435789 45.9899 0 50.9993H4.07183C4.08307 46.103 5.85268 41.3731 9.05917 37.669C12.2657 33.9649 16.6963 31.5322 21.5462 30.813L23.313 33.0804L20.9596 47.0503L24.4862 50.9993L28.0404 47.0503L25.687 33.0804L27.4538 30.7854C32.3084 31.5053 36.7427 33.942 39.9498 37.6519C43.1569 41.3618 44.9235 46.0983 44.9282 50.9993H49C48.9959 45.9992 47.4596 41.1201 44.5974 37.0176C41.7352 32.915 37.6842 29.7854 32.9887 28.0493ZM24.5 26.5331C22.2751 26.5331 20.1002 25.8742 18.2502 24.6399C16.4003 23.4055 14.9584 21.651 14.107 19.5983C13.2556 17.5456 13.0328 15.2868 13.4669 13.1077C13.9009 10.9286 14.9723 8.92689 16.5455 7.35582C18.1188 5.78475 20.1232 4.71483 22.3054 4.28137C24.4875 3.84792 26.7494 4.07038 28.8049 4.92064C30.8605 5.7709 32.6174 7.21076 33.8534 9.05815C35.0895 10.9055 35.7493 13.0775 35.7493 15.2993C35.7493 16.7745 35.4583 18.2353 34.893 19.5983C34.3277 20.9612 33.499 22.1996 32.4545 23.2428C31.4099 24.2859 30.1697 25.1134 28.8049 25.678C27.4401 26.2425 25.9773 26.5331 24.5 26.5331Z"
+                  fill="#DEDEDE" />
+              </g>
+              <defs>
+                <clipPath id="clip0_2841_45">
+                  <rect width="49" height="51" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+          </div>
+          <h4 class="registration__tab-title">Индивидуальный предприниматель</h4>
+        </div>
+        <div class="registration__tab" data-counterparty-path="ent">
+          <div class="registration__tab-icon registration__tab-icon--last">
+            <svg width="78" height="53" viewBox="0 0 78 53" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M46.2561 33.1403C48.6347 31.5694 50.444 29.273 51.4157 26.5917C52.3874 23.9104 52.4696 20.9871 51.6503 18.2553C50.8309 15.5235 49.1536 13.1288 46.8671 11.4264C44.5806 9.72406 41.8068 8.80469 38.957 8.80469C36.1073 8.80469 33.3334 9.72406 31.047 11.4264C28.7605 13.1288 27.0832 15.5235 26.2638 18.2553C25.4444 20.9871 25.5267 23.9104 26.4984 26.5917C27.47 29.273 29.2794 31.5694 31.658 33.1403C27.5908 34.6302 24.0787 37.3337 21.5959 40.8855C19.1132 44.4373 17.7797 48.6662 17.7754 53.001H21.2961C21.3035 48.7637 22.8303 44.6699 25.5986 41.4641C28.367 38.2583 32.193 36.1535 36.3809 35.5325L37.9266 37.5164L35.8728 49.5846L38.9213 53.001L41.984 49.5846L39.9517 37.5164L41.5046 35.5325C45.6885 36.1581 49.5095 38.265 52.2735 41.4703C55.0375 44.6757 56.5612 48.7669 56.5679 53.001H60.1101C60.1029 48.6708 58.7715 44.4467 56.2948 40.8963C53.8182 37.3458 50.315 34.6392 46.2561 33.1403ZM38.9284 31.8296C37.0088 31.8254 35.1334 31.2518 33.5393 30.1812C31.9453 29.1107 30.704 27.5913 29.9723 25.815C29.2406 24.0387 29.0513 22.0852 29.4285 20.2013C29.8056 18.3174 30.7321 16.5877 32.091 15.2306C33.4499 13.8735 35.1802 12.95 37.0633 12.5767C38.9464 12.2034 40.8978 12.3972 42.6709 13.1334C44.4441 13.8696 45.9594 15.1154 47.0255 16.7132C48.0915 18.311 48.6605 20.1892 48.6605 22.1106C48.6596 23.3884 48.4071 24.6536 47.9174 25.8337C47.4277 27.0139 46.7105 28.0859 45.8067 28.9885C44.9029 29.8911 43.8302 30.6066 42.65 31.0941C41.4698 31.5816 40.2052 31.8315 38.9284 31.8296Z"
+                fill="#DEDEDE" />
+              <path
+                d="M64.0246 24.3083C66.4012 22.7418 68.2082 20.4483 69.176 17.77C70.1438 15.0916 70.2206 12.1719 69.3949 9.44627C68.5692 6.72065 66.8854 4.33521 64.5944 2.64574C62.3035 0.956271 59.5282 0.0533 56.6826 0.0715117C53.2752 0.0251505 49.9868 1.32467 47.5301 3.6884C46.628 4.52895 45.8497 5.49355 45.2188 6.55327C46.3371 6.96844 47.3958 7.52954 48.3674 8.22205C49.0093 7.21676 49.8119 6.32392 50.7432 5.57921C52.4586 4.29465 54.5402 3.5943 56.6826 3.58097C59.0306 3.56734 61.3033 4.40945 63.0765 5.95009C64.8496 7.49072 66.0019 9.62456 66.3182 11.9532C66.6346 14.2819 66.0934 16.6462 64.7956 18.6047C63.4979 20.5633 61.5323 21.9822 59.2659 22.5965C58.398 22.8174 57.5066 22.9328 56.611 22.9403C56.3063 22.9521 56.0013 22.9281 55.7022 22.8687C55.6458 24.1103 55.444 25.3411 55.1011 26.5357C55.6097 26.4495 56.124 26.4016 56.6397 26.3925C57.3406 26.4043 58.0404 26.4521 58.7364 26.5357C63.0311 27.0412 66.991 29.1074 69.8641 32.3421C72.7372 35.5769 74.3236 39.7549 74.322 44.083H77.9C77.9307 39.7516 76.6104 35.5186 74.1232 31.9739C71.636 28.4292 68.1058 25.7495 64.0246 24.3083Z"
+                fill="#DEDEDE" />
+              <path
+                d="M21.2461 26.5007C21.7616 26.5126 22.2757 26.5604 22.7846 26.644C22.4419 25.4297 22.2402 24.1801 22.1835 22.9196C21.9044 22.9196 21.5538 22.9912 21.2747 22.9912C20.3738 22.9803 19.4775 22.86 18.6055 22.6331C16.3466 22.0138 14.3891 20.5949 13.0968 18.6399C11.8045 16.6849 11.2652 14.3268 11.5791 12.0038C11.8931 9.68079 13.0389 7.55085 14.8037 6.00974C16.5686 4.46863 18.8324 3.62114 21.1745 3.62476C23.3234 3.633 25.411 4.34206 27.1211 5.64449C28.0867 6.35196 28.8956 7.25177 29.4969 8.28733C30.4985 7.64918 31.5489 7.09118 32.6383 6.61854C32.0099 5.55906 31.234 4.59445 30.3341 3.75368C29.1491 2.54887 27.7335 1.59555 26.172 0.950721C24.6105 0.30589 22.9352 -0.0172188 21.2461 0.000707029C18.3985 -0.0211885 15.6203 0.879965 13.3269 2.56944C11.0336 4.25892 9.34811 6.64595 8.52261 9.37368C7.6971 12.1014 7.77589 15.0233 8.74718 17.7025C9.71847 20.3817 11.5301 22.6742 13.9112 24.2375C9.84334 25.747 6.33228 28.4624 3.84666 32.0213C1.36104 35.5802 0.0191158 39.8133 0 44.1554H3.57798C3.58886 39.8308 5.17955 35.6595 8.05035 32.4274C10.9211 29.1953 14.8738 27.1255 19.1637 26.6081C19.8556 26.5374 20.5506 26.5016 21.2461 26.5007Z"
+                fill="#DEDEDE" />
+            </svg>
+          </div>
+          <h4 class="registration__tab-title">Юридическое лицо</h4>
+        </div>
+      </div>
+
+      <!-- /// Регистрация для физ. лица /// -->
+
+      <div class="registration__content" data-counterparty-target="ind">
+        <h4 class="registration__title">Регистрация контрагента</h4>
+        <ul class="registration__progress-list">
+          <li class="registration__progress-item active"></li>
+          <li class="registration__progress-item"></li>
+          <li class="registration__progress-item"></li>
+        </ul>
+        <h5 class="registration__counterparty">Физическое лицо</h5>
+        <div class="registration__steps">
+          <div class="registration__step active">
+            <h6 class="registration__headline">Введите информацию о себе</h6>
+            <form action="#" class="form">
+              <h4 class="form__title">Фамилия</h4>
+              <input type="text" class="form__input" placeholder="Введите фамилию" required>
+              <h4 class="form__title">Имя</h4>
+              <input type="text" class="form__input" placeholder="Введите имя" required>
+              <h4 class="form__title">Отчество</h4>
+              <input type="text" class="form__input" placeholder="Введите отчество" required>
+              <h4 class="form__title">Дата рождения</h4>
+              <input type="text" class="form__input" placeholder="ДД.ММ.ГГГГ" required>
+              <h4 class="form__title">Номер телефона</h4>
+              <input type="text" class="form__input" placeholder="Введите телефон" required>
+            </form>
+          </div>
+          <div class="registration__step">
+            <h6 class="registration__headline">Введите паспортные данные</h6>
+            <form action="#" class="form">
+              <div class="form__row">
+                <div class="form__column form__column--series ">
+                  <h4 class="form__title">Серия</h4>
+                  <input type="text" class="form__input" placeholder="_ _ _ _" required id="passport-series">
+                </div>
+                <div class="form__column">
+                  <h4 class="form__title">Номер</h4>
+                  <input type="text" class="form__input" placeholder="_ _ _ _ _ _" required id="passport-number">
+                </div>
+              </div>
+              <h4 class="form__title">Кем выдан</h4>
+              <textarea class="form__textarea" name="#" placeholder="Введите кем выдан паспорт" required></textarea>
+              <h4 class="form__title">Дата выдачи</h4>
+              <input type="text" class="form__input" placeholder="ДД.ММ.ГГГГ" required>
+              <h4 class="form__title">ИНН</h4>
+              <input type="text" class="form__input" placeholder="Номер ИНН" required>
+              <h4 class="form__title">Скан паспорта</h4>
+              <div class="form__scan">
+                <div class="form__file form__file--one">
+                  <h5 class="form__file-title">Скан разворота</h5>
+                  <input class="form__file-input visually-hidden" id="passport-scan-1" type="file" name="passport-scan">
+                  <label for="passport-scan-1" class="form__file-label">Добавить</label>
+                  <span class="form__file-clear">х</span>
+                </div>
+              </div>
+              <div class="form__scan">
+                <div class="form__file form__file--two">
+                  <h5 class="form__file-title">Скан прописки</h5>
+                  <input class="form__file-input visually-hidden" id="passport-scan-2" type="file">
+                  <label for="passport-scan-2" class="form__file-label">Добавить</label>
+                  <span class="form__file-clear">х</span>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="registration__step">
+            <h6 class="registration__headline">Введите адрес регистрации</h6>
+            <form action="#" id="regForm" class="form">
+              <div class="form__row">
+                <div class="form__column form__column--index">
+                  <h4 class="form__title">Индекс</h4>
+                  <input type="text" class="form__input form__input--index" placeholder="_ _ _ _ _ _" required>
+                </div>
+                <div class="form__column form__column--select">
+                  <h4 class="form__title">Страна</h4>
+                  <select name="Страна" class="form__select select">
+                    <option placeholder selected disabled value="">Введите страну</option>
+                    <option value="Введите страну">Россия</option>
+                    <option value="Введите страну">Азербайджан</option>
+                    <option value="Введите страну">Австралия </option>
+                    <option value="Введите страну">Азербайджан </option>
+                    <option value="Введите страну">Алжир </option>
+                    <option value="Введите страну">Американское Самоа </option>
+                  </select>
+                </div>
+              </div>
+              <h4 class="form__title">Область</h4>
+              <select name="область" class="form__select select">
+                <option placeholder selected disabled value="">Введите область</option>
+                <option value="Алтайский край">Алтайский край</option>
+                <option value="Архангельская область">Архангельская область</option>
+                <option value="Астраханская область">Астраханская область</option>
+                <option value="Белгородская область">Белгородская область</option>
+              </select>
+              <h4 class="form__title">Район/Округ</h4>
+              <select name="район или округ" class="form__select select">
+                <option placeholder selected disabled value="">Введите район или округ</option>
+                <option value="Архаринский район">Архаринский район</option>
+                <option value="Белогорский район">Белогорский район </option>
+                <option value="Благовещенский район">Благовещенский район </option>
+                <option value="Бурейский район">Бурейский район</option>
+                <option value="Завитинский район">Завитинский район</option>
+              </select>
+              <h4 class="form__title">Населенный пункт</h4>
+              <select name="населенный пункт" class="form__select select">
+                <option placeholder selected disabled value="">Введите населенный пункт</option>
+                <option value="Амурский сельсовет">Амурский сельсовет </option>
+                <option value="Возжаевский сельсовет">Возжаевский сельсовет </option>
+                <option value="Кустанаевский сельсовет">Кустанаевский сельсовет </option>
+                <option value="Возжаевский сельсовет">Возжаевский сельсовет </option>
+              </select>
+              <h4 class="form__title">Улица</h4>
+              <input type="text" class="form__input" placeholder="Введите улицу" required>
+              <div class="form__row">
+                <div class="form__column form__column--home">
+                  <h4 class="form__title">Дом</h4>
+                  <input type="text" class="form__input " placeholder="Номер дома" required>
+                </div>
+                <div class="form__column">
+                  <h4 class="form__title">Квартира</h4>
+                  <input type="text" class="form__input" placeholder="Номер квартиры" required>
+                </div>
+              </div>
+              <div class="form__row form__row--agreement">
+                <label class="form__checkbox">
+                  <input class="form__checkbox-input visually-hidden" type="checkbox" data-inpt="check">
+                  <span class="form__checkbox-span"></span>
+                </label>
+                <p class="form__agreement">
+                  Я принимаю условия <a href="#">Пользовательского соглашения</a> и даю своё согласие Komplex-Host
+                  на обработку моей персональной информации
+                  на условиях, определенных <a href="#"> Политикой конфиденциальности.</a>
+                </p>
+              </div>
+            </form>
+          </div>
+          <div class="registration__buttons">
+            <button class="button registration__button light prev-btn">
+              Назад
+            </button>
+            <button class="button registration__button blue next-btn" data-graph-speed="200"
+              data-graph-path="registration-complete">
+              Далее
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- /// Регистрация для ИП /// -->
+
+      <div class="registration__content" data-counterparty-target="ind-ent">
+        <h4 class=" registration__title">Регистрация контрагента</h4>
+        <ul class="registration__progress-list">
+          <li class="registration__progress-item active"></li>
+          <li class="registration__progress-item"></li>
+          <li class="registration__progress-item"></li>
+          <li class="registration__progress-item"></li>
+          <li class="registration__progress-item"></li>
+        </ul>
+        <h5 class="registration__counterparty">Индивидуальный предприниматель</h5>
+        <div class="registration__steps">
+          <div class="registration__step active">
+            <h6 class="registration__headline">Введите информацию об ИП</h6>
+            <form action="#" class="form">
+              <h4 class="form__title">ИНН</h4>
+              <input type="text" class="form__input" placeholder="Номер ИНН" required>
+              <button class="form__inn">Заполнить по ИНН</button>
+              <h4 class="form__title">Наименование ИП</h4>
+              <input type="text" class="form__input" placeholder="Введите название" required>
+              <h4 class="form__title">Фамилия</h4>
+              <input type="text" class="form__input" placeholder="Введите фамилию" required>
+              <h4 class="form__title">Имя</h4>
+              <input type="text" class="form__input" placeholder="Введите имя" required>
+              <h4 class="form__title">Отчество</h4>
+              <input type="text" class="form__input" placeholder="Введите отчество" required>
+            </form>
+          </div>
+          <div class="registration__step">
+            <h6 class="registration__headline">Введите адрес регистрации</h6>
+            <form action="#" id="regForm" class="form">
+              <div class="form__row">
+                <div class="form__column form__column--index">
+                  <h4 class="form__title">Индекс</h4>
+                  <input type="text" class="form__input form__input--index" placeholder="_ _ _ _ _ _" required>
+                </div>
+                <div class="form__column form__column--select">
+                  <h4 class="form__title">Страна</h4>
+                  <select name="Страна" class="form__select select">
+                    <option placeholder selected disabled value="">Введите страну</option>
+                    <option value="Введите страну">Россия</option>
+                    <option value="Введите страну">Азербайджан</option>
+                    <option value="Введите страну">Австралия </option>
+                    <option value="Введите страну">Азербайджан </option>
+                    <option value="Введите страну">Алжир </option>
+                    <option value="Введите страну">Американское Самоа </option>
+                  </select>
+                </div>
+              </div>
+              <h4 class="form__title">Область</h4>
+              <select name="область" class="form__select select">
+                <option placeholder selected disabled value="">Введите область</option>
+                <option value="Алтайский край">Алтайский край</option>
+                <option value="Архангельская область">Архангельская область</option>
+                <option value="Астраханская область">Астраханская область</option>
+                <option value="Белгородская область">Белгородская область</option>
+              </select>
+              <h4 class="form__title">Район/Округ</h4>
+              <select name="район или округ" class="form__select select">
+                <option placeholder selected disabled value="">Введите район или округ</option>
+                <option value="Архаринский район">Архаринский район</option>
+                <option value="Белогорский район">Белогорский район </option>
+                <option value="Благовещенский район">Благовещенский район </option>
+                <option value="Бурейский район">Бурейский район</option>
+                <option value="Завитинский район">Завитинский район</option>
+              </select>
+              <h4 class="form__title">Населенный пункт</h4>
+              <select name="населенный пункт" class="form__select select">
+                <option placeholder selected disabled value="">Введите населенный пункт</option>
+                <option value="Амурский сельсовет">Амурский сельсовет </option>
+                <option value="Возжаевский сельсовет">Возжаевский сельсовет </option>
+                <option value="Кустанаевский сельсовет">Кустанаевский сельсовет </option>
+                <option value="Возжаевский сельсовет">Возжаевский сельсовет </option>
+              </select>
+              <h4 class="form__title">Улица</h4>
+              <input type="text" class="form__input" placeholder="Введите улицу" required>
+              <h4 class="form__title">Дом</h4>
+              <input type="text" class="form__input " placeholder="Номер дома" required>
+              <div class="form__row">
+                <div class="form__column">
+                  <h4 class="form__title">Корпус</h4>
+                  <input type="text" class="form__input " placeholder="Номер корпуса" required>
+                </div>
+                <div class="form__column form__column--margin-left">
+                  <h4 class="form__title">Квартира/офис</h4>
+                  <input type="text" class="form__input" placeholder="Номер квартиры/офиса" required>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="registration__step">
+            <h6 class="registration__headline">Почтовый адрес совпадает с адресом регистрации?</h6>
+            <form action="#" class="form">
+              <div class="form__radios">
+                <label class="form__radio">
+                  <input type="radio" checked name="addres-registration" class="form__radio-input visually-hidden"
+                    data-add-address="true">
+                  <span class="form__radio-span"></span>
+                  <span class="form__radio-title">Да</span>
+                </label>
+                <label class="form__radio">
+                  <input type="radio" name="addres-registration" data-add-address="false"
+                    class="form__radio-input visually-hidden">
+                  <span class="form__radio-span"></span>
+                  <span class="form__radio-title">Нет</span>
+                </label>
+              </div>
+              <div class="form__additional-address">
+                <h6 class="registration__headline">Введите адрес регистрации</h6>
+                <div class="form__row">
+                  <div class="form__column form__column--index">
+                    <h4 class="form__title">Индекс</h4>
+                    <input type="text" class="form__input form__input--index" placeholder="_ _ _ _ _ _" required>
+                  </div>
+                  <div class="form__column form__column--select">
+                    <h4 class="form__title">Страна</h4>
+                    <select name="Страна" class="form__select select">
+                      <option placeholder selected disabled value="">Введите страну</option>
+                      <option value="Введите страну">Россия</option>
+                      <option value="Введите страну">Азербайджан</option>
+                      <option value="Введите страну">Австралия </option>
+                      <option value="Введите страну">Азербайджан </option>
+                      <option value="Введите страну">Алжир </option>
+                      <option value="Введите страну">Американское Самоа </option>
+                    </select>
+                  </div>
+                </div>
+                <h4 class="form__title">Область</h4>
+                <select name="область" class="form__select select">
+                  <option placeholder selected disabled value="">Введите область</option>
+                  <option value="Алтайский край">Алтайский край</option>
+                  <option value="Архангельская область">Архангельская область</option>
+                  <option value="Астраханская область">Астраханская область</option>
+                  <option value="Белгородская область">Белгородская область</option>
+                </select>
+                <h4 class="form__title">Район/Округ</h4>
+                <select name="район или округ" class="form__select select">
+                  <option placeholder selected disabled value="">Введите район или округ</option>
+                  <option value="Архаринский район">Архаринский район</option>
+                  <option value="Белогорский район">Белогорский район </option>
+                  <option value="Благовещенский район">Благовещенский район </option>
+                  <option value="Бурейский район">Бурейский район</option>
+                  <option value="Завитинский район">Завитинский район</option>
+                </select>
+                <h4 class="form__title">Населенный пункт</h4>
+                <select name="населенный пункт" class="form__select select">
+                  <option placeholder selected disabled value="">Введите населенный пункт</option>
+                  <option value="Амурский сельсовет">Амурский сельсовет </option>
+                  <option value="Возжаевский сельсовет">Возжаевский сельсовет </option>
+                  <option value="Кустанаевский сельсовет">Кустанаевский сельсовет </option>
+                  <option value="Возжаевский сельсовет">Возжаевский сельсовет </option>
+                </select>
+                <h4 class="form__title">Улица</h4>
+                <input type="text" class="form__input" placeholder="Введите улицу" required>
+                <h4 class="form__title">Дом</h4>
+                <input type="text" class="form__input " placeholder="Номер дома" required>
+                <div class="form__row">
+                  <div class="form__column">
+                    <h4 class="form__title">Корпус</h4>
+                    <input type="text" class="form__input " placeholder="Номер корпуса" required>
+                  </div>
+                  <div class="form__column form__column--margin-left">
+                    <h4 class="form__title">Квартира/офис</h4>
+                    <input type="text" class="form__input" placeholder="Номер квартиры/офиса" required>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="registration__step">
+            <h6 class="registration__headline">Введите реквизиты</h6>
+            <form action="#" id="regForm" class="form">
+              <h4 class="form__title">Наименование банка</h4>
+              <input type="text" class="form__input form__input--index" placeholder="Введите название" required>
+              <h4 class="form__title">Расчетный счет</h4>
+              <input type="text" class="form__input form__input--index" placeholder="Номер рас/сч" required>
+              <h4 class="form__title">Корреспондентский счет</h4>
+              <input type="text" class="form__input form__input--index" placeholder="Номер кор/сч" required>
+              <div class="form__row">
+                <div class="form__column form__column--index">
+                  <h4 class="form__title">Индекс</h4>
+                  <input type="text" class="form__input form__input--index" placeholder="_ _ _ _ _ _" required>
+                </div>
+                <div class="form__column form__column--select">
+                  <h4 class="form__title">Страна</h4>
+                  <select name="Страна" class="form__select select">
+                    <option placeholder selected disabled value="">Введите страну</option>
+                    <option value="Введите страну">Россия</option>
+                    <option value="Введите страну">Азербайджан</option>
+                    <option value="Введите страну">Австралия </option>
+                    <option value="Введите страну">Азербайджан </option>
+                    <option value="Введите страну">Алжир </option>
+                    <option value="Введите страну">Американское Самоа </option>
+                  </select>
+                </div>
+              </div>
+              <h4 class="form__title">Область</h4>
+              <select name="область" class="form__select select">
+                <option placeholder selected disabled value="">Введите область</option>
+                <option value="Алтайский край">Алтайский край</option>
+                <option value="Архангельская область">Архангельская область</option>
+                <option value="Астраханская область">Астраханская область</option>
+                <option value="Белгородская область">Белгородская область</option>
+              </select>
+              <h4 class="form__title">Район/Округ</h4>
+              <select name="район или округ" class="form__select select">
+                <option placeholder selected disabled value="">Введите район или округ</option>
+                <option value="Архаринский район">Архаринский район</option>
+                <option value="Белогорский район">Белогорский район </option>
+                <option value="Благовещенский район">Благовещенский район </option>
+                <option value="Бурейский район">Бурейский район</option>
+                <option value="Завитинский район">Завитинский район</option>
+              </select>
+              <h4 class="form__title">Населенный пункт</h4>
+              <select name="населенный пункт" class="form__select select">
+                <option placeholder selected disabled value="">Введите населенный пункт</option>
+                <option value="Амурский сельсовет">Амурский сельсовет </option>
+                <option value="Возжаевский сельсовет">Возжаевский сельсовет </option>
+                <option value="Кустанаевский сельсовет">Кустанаевский сельсовет </option>
+                <option value="Возжаевский сельсовет">Возжаевский сельсовет </option>
+              </select>
+              <h4 class="form__title">Улица</h4>
+              <input type="text" class="form__input" placeholder="Введите улицу" required>
+              <div class="form__row">
+                <div class="form__column">
+                  <h4 class="form__title">Дом</h4>
+                  <input type="text" class="form__input " placeholder="Номер дома" required>
+                </div>
+                <div class="form__column form__column--margin-left">
+                  <h4 class="form__title">Корпус</h4>
+                  <input type="text" class="form__input " placeholder="Номер корпуса" required>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="registration__step">
+            <h6 class="registration__headline">Введите контактное лицо <a href="#">по техническим вопросам</a></h6>
+            <form action="#" class="form">
+              <h4 class="form__title">Фамилия</h4>
+              <input type="text" class="form__input" placeholder="Введите фамилию" required>
+              <h4 class="form__title">Имя</h4>
+              <input type="text" class="form__input" placeholder="Введите имя" required>
+              <h4 class="form__title">Отчество</h4>
+              <input type="text" class="form__input" placeholder="Введите отчество" required>
+              <h4 class="form__title">Электронная почта</h4>
+              <input type="text" class="form__input" placeholder="Введите e-mail" required>
+              <h4 class="form__title">Номер телефона</h4>
+              <input type="text" class="form__input" placeholder="Введите телефон" required>
+            </form>
+            <h6 class="registration__headline registration__headline--margin-top">Введите контактное лицо <a href="#">по
+                техническим
+                вопросам</a></h6>
+            <form action="#" class="form">
+              <h4 class="form__title">Фамилия</h4>
+              <input type="text" class="form__input" placeholder="Введите фамилию" required>
+              <h4 class="form__title">Имя</h4>
+              <input type="text" class="form__input" placeholder="Введите имя" required>
+              <h4 class="form__title">Отчество</h4>
+              <input type="text" class="form__input" placeholder="Введите отчество" required>
+              <h4 class="form__title">Электронная почта</h4>
+              <input type="text" class="form__input" placeholder="Введите e-mail" required>
+              <h4 class="form__title">Номер телефона</h4>
+              <input type="text" class="form__input" placeholder="Введите телефон" required>
+              <div class="form__row form__row--agreement">
+                <label class="form__checkbox">
+                  <input class="form__checkbox-input visually-hidden" type="checkbox" data-inpt="check">
+                  <span class="form__checkbox-span"></span>
+                </label>
+                <p class="form__agreement">
+                  Я принимаю условия <a href="#">Пользовательского соглашения</a> и даю своё согласие Komplex-Host
+                  на обработку моей персональной информации
+                  на условиях, определенных <a href="#"> Политикой конфиденциальности.</a>
+                </p>
+              </div>
+            </form>
+          </div>
+          <div class="registration__buttons">
+            <button class="button registration__button light prev-btn">
+              Назад
+            </button>
+            <button class="button registration__button blue next-btn" data-graph-speed="200"
+              data-graph-path="registration-complete">
+              Далее
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- /// Регистрация для юр. лица /// -->
+
+      <div class="registration__content" data-counterparty-target="ent">
+        <h4 class="registration__title">Регистрация контрагента</h4>
+        <ul class="registration__progress-list">
+          <li class="registration__progress-item active"></li>
+          <li class="registration__progress-item"></li>
+          <li class="registration__progress-item"></li>
+          <li class="registration__progress-item"></li>
+          <li class="registration__progress-item"></li>
+        </ul>
+        <h5 class="registration__counterparty">Юридическое лицо</h5>
+        <div class="registration__steps">
+          <div class="registration__step active">
+            <h6 class="registration__headline">Введите информацию об организации</h6>
+            <form action="#" class="form">
+              <h4 class="form__title">ИНН</h4>
+              <input type="text" class="form__input" placeholder="Номер ИНН" required>
+              <button class="form__inn">Заполнить по ИНН</button>
+              <h4 class="form__title">Наименование организаци</h4>
+              <input type="text" class="form__input" placeholder="Введите название" required>
+              <h4 class="form__title">КПП</h4>
+              <input type="text" class="form__input" placeholder="Номер КПП" required>
+            </form>
+          </div>
+          <div class="registration__step">
+            <h6 class="registration__headline">Введите юридический адрес</h6>
+            <form action="#" id="regForm" class="form">
+              <div class="form__row">
+                <div class="form__column form__column--index">
+                  <h4 class="form__title">Индекс</h4>
+                  <input type="text" class="form__input form__input--index" placeholder="_ _ _ _ _ _" required>
+                </div>
+                <div class="form__column form__column--select">
+                  <h4 class="form__title">Страна</h4>
+                  <select name="Страна" class="form__select select">
+                    <option placeholder selected disabled value="">Введите страну</option>
+                    <option value="Введите страну">Россия</option>
+                    <option value="Введите страну">Азербайджан</option>
+                    <option value="Введите страну">Австралия </option>
+                    <option value="Введите страну">Азербайджан </option>
+                    <option value="Введите страну">Алжир </option>
+                    <option value="Введите страну">Американское Самоа </option>
+                  </select>
+                </div>
+              </div>
+              <h4 class="form__title">Область</h4>
+              <select name="область" class="form__select select">
+                <option placeholder selected disabled value="">Введите область</option>
+                <option value="Алтайский край">Алтайский край</option>
+                <option value="Архангельская область">Архангельская область</option>
+                <option value="Астраханская область">Астраханская область</option>
+                <option value="Белгородская область">Белгородская область</option>
+              </select>
+              <h4 class="form__title">Район/Округ</h4>
+              <select name="район или округ" class="form__select select">
+                <option placeholder selected disabled value="">Введите район или округ</option>
+                <option value="Архаринский район">Архаринский район</option>
+                <option value="Белогорский район">Белогорский район </option>
+                <option value="Благовещенский район">Благовещенский район </option>
+                <option value="Бурейский район">Бурейский район</option>
+                <option value="Завитинский район">Завитинский район</option>
+              </select>
+              <h4 class="form__title">Населенный пункт</h4>
+              <select name="населенный пункт" class="form__select select">
+                <option placeholder selected disabled value="">Введите населенный пункт</option>
+                <option value="Амурский сельсовет">Амурский сельсовет </option>
+                <option value="Возжаевский сельсовет">Возжаевский сельсовет </option>
+                <option value="Кустанаевский сельсовет">Кустанаевский сельсовет </option>
+                <option value="Возжаевский сельсовет">Возжаевский сельсовет </option>
+              </select>
+              <h4 class="form__title">Улица</h4>
+              <input type="text" class="form__input" placeholder="Введите улицу" required>
+              <h4 class="form__title">Дом</h4>
+              <input type="text" class="form__input " placeholder="Номер дома" required>
+              <div class="form__row">
+                <div class="form__column">
+                  <h4 class="form__title">Корпус</h4>
+                  <input type="text" class="form__input " placeholder="Номер корпуса" required>
+                </div>
+                <div class="form__column form__column--margin-left">
+                  <h4 class="form__title">Квартира/офис</h4>
+                  <input type="text" class="form__input" placeholder="Номер квартиры/офиса" required>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="registration__step">
+            <h6 class="registration__headline">Почтовый адрес совпадает с юридическим?</h6>
+            <form action="#" class="form">
+              <div class="form__radios">
+                <label class="form__radio">
+                  <input type="radio" checked name="addres-registration" class="form__radio-input visually-hidden"
+                    data-add-address="true">
+                  <span class="form__radio-span"></span>
+                  <span class="form__radio-title">Да</span>
+                </label>
+                <label class="form__radio">
+                  <input type="radio" name="addres-registration" data-add-address="false"
+                    class="form__radio-input visually-hidden">
+                  <span class="form__radio-span"></span>
+                  <span class="form__radio-title">Нет</span>
+                </label>
+              </div>
+              <div class="form__additional-address">
+                <h6 class="registration__headline">Введите адрес регистрации</h6>
+                <div class="form__row">
+                  <div class="form__column form__column--index">
+                    <h4 class="form__title">Индекс</h4>
+                    <input type="text" class="form__input form__input--index" placeholder="_ _ _ _ _ _" required>
+                  </div>
+                  <div class="form__column form__column--select">
+                    <h4 class="form__title">Страна</h4>
+                    <select name="Страна" class="form__select select">
+                      <option placeholder selected disabled value="">Введите страну</option>
+                      <option value="Введите страну">Россия</option>
+                      <option value="Введите страну">Азербайджан</option>
+                      <option value="Введите страну">Австралия </option>
+                      <option value="Введите страну">Азербайджан </option>
+                      <option value="Введите страну">Алжир </option>
+                      <option value="Введите страну">Американское Самоа </option>
+                    </select>
+                  </div>
+                </div>
+                <h4 class="form__title">Область</h4>
+                <select name="область" class="form__select select">
+                  <option placeholder selected disabled value="">Введите область</option>
+                  <option value="Алтайский край">Алтайский край</option>
+                  <option value="Архангельская область">Архангельская область</option>
+                  <option value="Астраханская область">Астраханская область</option>
+                  <option value="Белгородская область">Белгородская область</option>
+                </select>
+                <h4 class="form__title">Район/Округ</h4>
+                <select name="район или округ" class="form__select select">
+                  <option placeholder selected disabled value="">Введите район или округ</option>
+                  <option value="Архаринский район">Архаринский район</option>
+                  <option value="Белогорский район">Белогорский район </option>
+                  <option value="Благовещенский район">Благовещенский район </option>
+                  <option value="Бурейский район">Бурейский район</option>
+                  <option value="Завитинский район">Завитинский район</option>
+                </select>
+                <h4 class="form__title">Населенный пункт</h4>
+                <select name="населенный пункт" class="form__select select">
+                  <option placeholder selected disabled value="">Введите населенный пункт</option>
+                  <option value="Амурский сельсовет">Амурский сельсовет </option>
+                  <option value="Возжаевский сельсовет">Возжаевский сельсовет </option>
+                  <option value="Кустанаевский сельсовет">Кустанаевский сельсовет </option>
+                  <option value="Возжаевский сельсовет">Возжаевский сельсовет </option>
+                </select>
+                <h4 class="form__title">Улица</h4>
+                <input type="text" class="form__input" placeholder="Введите улицу" required>
+                <h4 class="form__title">Дом</h4>
+                <input type="text" class="form__input " placeholder="Номер дома" required>
+                <div class="form__row">
+                  <div class="form__column">
+                    <h4 class="form__title">Корпус</h4>
+                    <input type="text" class="form__input " placeholder="Номер корпуса" required>
+                  </div>
+                  <div class="form__column form__column--margin-left">
+                    <h4 class="form__title">Квартира/офис</h4>
+                    <input type="text" class="form__input" placeholder="Номер квартиры/офиса" required>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="registration__step">
+            <h6 class="registration__headline">Введите реквизиты</h6>
+            <form action="#" class="form">
+              <h4 class="form__title">Наименование банка</h4>
+              <input type="text" class="form__input" placeholder="Введите название" required>
+              <h4 class="form__title">Расчетный счет</h4>
+              <input type="text" class="form__input" placeholder="Номер рас/сч" required>
+              <h4 class="form__title">Корреспондентский счет</h4>
+              <input type="text" class="form__input" placeholder="Номер кор/сч" required>
+              <div class="form__row">
+                <div class="form__column form__column--index">
+                  <h4 class="form__title">Индекс</h4>
+                  <input type="text" class="form__input form__input--index" placeholder="_ _ _ _ _ _" required>
+                </div>
+                <div class="form__column form__column--select">
+                  <h4 class="form__title">Страна</h4>
+                  <select name="Страна" class="form__select select">
+                    <option placeholder selected disabled value="">Введите страну</option>
+                    <option value="Введите страну">Россия</option>
+                    <option value="Введите страну">Азербайджан</option>
+                    <option value="Введите страну">Австралия </option>
+                    <option value="Введите страну">Азербайджан </option>
+                    <option value="Введите страну">Алжир </option>
+                    <option value="Введите страну">Американское Самоа </option>
+                  </select>
+                </div>
+              </div>
+              <h4 class="form__title">Область</h4>
+              <select name="область" class="form__select select">
+                <option placeholder selected disabled value="">Введите область</option>
+                <option value="Алтайский край">Алтайский край</option>
+                <option value="Архангельская область">Архангельская область</option>
+                <option value="Астраханская область">Астраханская область</option>
+                <option value="Белгородская область">Белгородская область</option>
+              </select>
+              <h4 class="form__title">Район/Округ</h4>
+              <select name="район или округ" class="form__select select">
+                <option placeholder selected disabled value="">Введите район или округ</option>
+                <option value="Архаринский район">Архаринский район</option>
+                <option value="Белогорский район">Белогорский район </option>
+                <option value="Благовещенский район">Благовещенский район </option>
+                <option value="Бурейский район">Бурейский район</option>
+                <option value="Завитинский район">Завитинский район</option>
+              </select>
+              <h4 class="form__title">Населенный пункт</h4>
+              <select name="населенный пункт" class="form__select select">
+                <option placeholder selected disabled value="">Введите населенный пункт</option>
+                <option value="Амурский сельсовет">Амурский сельсовет </option>
+                <option value="Возжаевский сельсовет">Возжаевский сельсовет </option>
+                <option value="Кустанаевский сельсовет">Кустанаевский сельсовет </option>
+                <option value="Возжаевский сельсовет">Возжаевский сельсовет </option>
+              </select>
+              <h4 class="form__title">Улица</h4>
+              <input type="text" class="form__input" placeholder="Введите улицу" required>
+              <div class="form__row">
+                <div class="form__column">
+                  <h4 class="form__title">Дом</h4>
+                  <input type="text" class="form__input " placeholder="Номер дома" required>
+                </div>
+                <div class="form__column form__column--margin-left">
+                  <h4 class="form__title">Корпус</h4>
+                  <input type="text" class="form__input " placeholder="Номер корпуса" required>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="registration__step">
+            <h6 class="registration__headline">Введите контактное лицо <a href="#">по техническим вопросам</a></h6>
+            <form action="#" class="form">
+              <h4 class="form__title">Фамилия</h4>
+              <input type="text" class="form__input" placeholder="Введите фамилию" required>
+              <h4 class="form__title">Имя</h4>
+              <input type="text" class="form__input" placeholder="Введите имя" required>
+              <h4 class="form__title">Отчество</h4>
+              <input type="text" class="form__input" placeholder="Введите отчество" required>
+              <h4 class="form__title">Электронная почта</h4>
+              <input type="text" class="form__input" placeholder="Введите e-mail" required>
+              <h4 class="form__title">Номер телефона</h4>
+              <input type="text" class="form__input" placeholder="Введите телефон" required>
+            </form>
+            <h6 class="registration__headline registration__headline--margin-top">Введите контактное лицо <a href="#">по
+                техническим
+                вопросам</a></h6>
+            <form action="#" class="form">
+              <h4 class="form__title">Фамилия</h4>
+              <input type="text" class="form__input" placeholder="Введите фамилию" required>
+              <h4 class="form__title">Имя</h4>
+              <input type="text" class="form__input" placeholder="Введите имя" required>
+              <h4 class="form__title">Отчество</h4>
+              <input type="text" class="form__input" placeholder="Введите отчество" required>
+              <h4 class="form__title">Электронная почта</h4>
+              <input type="text" class="form__input" placeholder="Введите e-mail" required>
+              <h4 class="form__title">Номер телефона</h4>
+              <input type="text" class="form__input" placeholder="Введите телефон" required>
+              <div class="form__row form__row--agreement">
+                <label class="form__checkbox">
+                  <input class="form__checkbox-input visually-hidden" type="checkbox" data-inpt="check">
+                  <span class="form__checkbox-span"></span>
+                </label>
+                <p class="form__agreement">
+                  Я принимаю условия <a href="#">Пользовательского соглашения</a> и даю своё согласие Komplex-Host
+                  на обработку моей персональной информации
+                  на условиях, определенных <a href="#"> Политикой конфиденциальности.</a>
+                </p>
+              </div>
+            </form>
+          </div>
+          <div class="registration__buttons">
+            <button class="button registration__button light prev-btn">
+              Назад
+            </button>
+            <button class="button registration__button blue next-btn" data-graph-speed="200"
+              data-graph-path="registration-complete">
+              Далее
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- /// Ошибка регистрации /// -->
+
+      <div class="registration__error">
+        <button class="registration__error-close"></button>
+        <h6 class="registration__error-tittle">Неверно введены:</h6>
+        <ul class="registration__error-list">
+          <li class="registration__error-item">Улица </li>
+          <li class="registration__error-item"> Дом</li>
+          <li class="registration__error-item"> Квартира</li>
+        </ul>
+        <p class="registration__error-message">Пожалуйста, проверьте
+          Ваши данные</p>
+      </div>
+
+      <!-- /// Модалка для завершение регистрации /// -->
+
+      <div class="graph-modal registration-modal">
+        <div class="graph-modal__container registration-modal__container" role="dialog" aria-modal="true"
+          data-graph-target="registration-complete">
+          <div class="graph-modal__content registration-modal__content">
+            <h5 class="registration-modal__title">Запрос на создание контрагента отправлен
+              в техподдержку</h5>
+            <button class="btn-reset graph-modal__close js-modal-close registration-modal__btn button blue"
+              aria-label="Закрыть модальное окно">Ок</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</body>
+
+</html>

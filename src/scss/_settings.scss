@@ -37,18 +37,22 @@ ol {
 .page {
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+    min-width: 320px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: $black;
+  }
+
+  &__section {
+    display: flex;
+  }
 }
 
-.page__body {
-  margin: 0;
-  min-width: 320px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  color: $black;
-
-}
 
 .visually-hidden {
   position: absolute;
