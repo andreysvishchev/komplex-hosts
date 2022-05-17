@@ -4,19 +4,276 @@
 @include('partials/head.html')
 
 <body class="page__body">
-
   @include('partials/header.html')
   <div class="lk">
     <div class="lk__inner">
       @include('partials/nav.html')
+      <div class="lk__content">
+        <div class="lk__tabs tabs">
+          <ul class="lk__tabs-list">
+            <li class="lk__tabs-item">
+              <button class="lk__tabs-button tabs__btn active" data-tabs-path="all-services">Все услуги</button>
+            </li>
+            <li class="lk__tabs-item">
+              <button class="lk__tabs-button tabs__btn" data-tabs-path="rent-place">Аренда места</button>
+            </li>
+            <li class="lk__tabs-item">
+              <button class="lk__tabs-button tabs__btn" data-tabs-path="rent-rack">Аренда стойки </button>
+            </li>
+            <li class="lk__tabs-item">
+              <button class="lk__tabs-button tabs__btn" data-tabs-path="rent-server">Аренда сервера</button>
+            </li>
+            <li class="lk__tabs-item">
+              <button class="lk__tabs-button tabs__btn" data-tabs-path="archive-service">Архив услуг</button>
+            </li>
+          </ul>
 
+          <!-- /// Все Услуги /// -->
+
+          <div class="lk__tabs-content tabs__content active" data-tabs-target="all-services">
+            <div class="all-services">
+              <h5 class="all-services__caption">У Вас нет подключенных услуг.</h5>
+              <h5 class="all-services__caption">Вы можете подключить:</h5>
+              <div class="all-services__items">
+                <div class="all-services__item all-services__item--place">
+                  <div class="all-services__icon all-services__icon--place"></div>
+                  <div class="all-services__info">
+                    <h5 class="all-services__headline">Аренда места</h5>
+                    <button class="all-services__btn all-services__btn--place">Подключить</button>
+                  </div>
+                </div>
+                <div class="all-services__item all-services__item--rack">
+                  <div class="all-services__icon all-services__icon--rack"></div>
+                  <div class="all-services__info">
+                    <h5 class="all-services__headline">Аренда стойки</h5>
+                    <button class="all-services__btn all-services__btn--rack">Подключить</button>
+                  </div>
+                </div>
+                <div class="all-services__item all-services__item--server">
+                  <div class="all-services__icon all-services__icon--server"></div>
+                  <div class="all-services__info">
+                    <h5 class="all-services__headline">Аренда сервера</h5>
+                    <button class="all-services__btn all-services__btn--server">Подключить</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="rent lk__block">
+                <span class="rent__error">Услуга заблокирована</span>
+                <div class="rent__disabled">
+                  <div class="rent__top">
+                    <h4 class="rent__caption">Аренда места</h4>
+                    <span class="rent__number">253/893.156</span>
+                    <a href="#" class="rent__link">?</a>
+                  </div>
+                  <div class="rent__table table">
+                    <div class="table__captions">
+                      <h6 class="table__caption">Наименование услуги</h6>
+                      <h6 class="table__caption">Цена</h6>
+                      <h6 class="table__caption">Кол-во</h6>
+                      <h6 class="table__caption">Сумма</h6>
+                    </div>
+                    <div class="table__row">
+                      <div class="table__column service-name">Аренда места,<span>Unit</span></div>
+                      <div class="table__column service-price">1500₽</div>
+                      <div class="table__column service-amount">2</div>
+                      <div class="table__column service-sum">3000₽</div>
+                    </div>
+                    <div class="table__row">
+                      <div class="table__column service-name">Электропитание,<span>Watt</span></div>
+                      <div class="table__column service-price">150₽</div>
+                      <div class="table__column service-amount">200</div>
+                      <div class="table__column service-sum">150₽</div>
+                    </div>
+                    <div class="table__row">
+                      <div class="table__column service-name">Порт коммутатора</div>
+                      <div class="table__column service-price">150₽</div>
+                      <div class="table__column service-amount">1</div>
+                      <div class="table__column service-sum">150₽</div>
+                    </div>
+                  </div>
+                  <div class="rent__bot">
+                    <div class="rent__data">
+                      <span class="rent__data-caption">Дата подключения:</span>
+                      <strong class="rent__data-num">21.05.2017</strong>
+                    </div>
+                    <div class="rent__price">
+                      <span class="rent__price-caption">Итого:</span>
+                      <strong class="rent__price-sum">3 300 ₽</strong>
+                    </div>
+                  </div>
+                  <a href="#" class="rent__more button light">Подробнее</a>
+                </div>
+
+
+              </div>
+
+              <div class="rent lk__block disabled">
+                <span class="rent__error">Услуга заблокирована</span>
+                <div class="rent__disabled">
+                  <div class="rent__top">
+                    <h4 class="rent__caption">Аренда места</h4>
+                    <span class="rent__number">253/893.156</span>
+                    <a href="#" class="rent__link">?</a>
+                  </div>
+                  <div class="rent__table table">
+                    <div class="table__captions">
+                      <h6 class="table__caption">Наименование услуги</h6>
+                      <h6 class="table__caption">Цена</h6>
+                      <h6 class="table__caption">Кол-во</h6>
+                      <h6 class="table__caption">Сумма</h6>
+                    </div>
+                    <div class="table__row">
+                      <div class="table__column service-name">Аренда места,<span>Unit</span></div>
+                      <div class="table__column service-price">1500₽</div>
+                      <div class="table__column service-amount">2</div>
+                      <div class="table__column service-sum">3000₽</div>
+                    </div>
+                    <div class="table__row">
+                      <div class="table__column service-name">Электропитание,<span>Watt</span></div>
+                      <div class="table__column service-price">150₽</div>
+                      <div class="table__column service-amount">200</div>
+                      <div class="table__column service-sum">150₽</div>
+                    </div>
+                    <div class="table__row">
+                      <div class="table__column service-name">Порт коммутатора</div>
+                      <div class="table__column service-price">150₽</div>
+                      <div class="table__column service-amount">1</div>
+                      <div class="table__column service-sum">150₽</div>
+                    </div>
+                  </div>
+                  <div class="rent__bot">
+                    <div class="rent__data">
+                      <span class="rent__data-caption">Дата подключения:</span>
+                      <strong class="rent__data-num">21.05.2017</strong>
+                    </div>
+                    <div class="rent__price">
+                      <span class="rent__price-caption">Итого:</span>
+                      <strong class="rent__price-sum">3 300 ₽</strong>
+                    </div>
+                  </div>
+                  <a href="#" class="rent__more button light">Подробнее</a>
+                </div>
+
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- /// Аренда места /// -->
+
+          <div class="lk__tabs-content tabs__content" data-tabs-target="rent-place">
+            <div class="place-rental">
+              <div class="rent lk__block">
+                <span class="rent__error">Услуга заблокирована</span>
+                <div class="rent__disabled">
+                  <div class="rent__top">
+                    <h4 class="rent__caption">Аренда места</h4>
+                    <span class="rent__number">253/893.156</span>
+                    <a href="#" class="rent__link">?</a>
+                  </div>
+                  <div class="rent__table table">
+                    <div class="table__captions">
+                      <h6 class="table__caption">Наименование услуги</h6>
+                      <h6 class="table__caption">Цена</h6>
+                      <h6 class="table__caption">Кол-во</h6>
+                      <h6 class="table__caption">Сумма</h6>
+                    </div>
+                    <div class="table__row">
+                      <div class="table__column service-name">Аренда места,<span>Unit</span></div>
+                      <div class="table__column service-price">1500₽</div>
+                      <div class="table__column service-amount">2</div>
+                      <div class="table__column service-sum">3000₽</div>
+                    </div>
+                    <div class="table__row">
+                      <div class="table__column service-name">Электропитание,<span>Watt</span></div>
+                      <div class="table__column service-price">150₽</div>
+                      <div class="table__column service-amount">200</div>
+                      <div class="table__column service-sum">150₽</div>
+                    </div>
+                    <div class="table__row">
+                      <div class="table__column service-name">Порт коммутатора</div>
+                      <div class="table__column service-price">150₽</div>
+                      <div class="table__column service-amount">1</div>
+                      <div class="table__column service-sum">150₽</div>
+                    </div>
+                  </div>
+                  <div class="rent__bot">
+                    <div class="rent__data">
+                      <span class="rent__data-caption">Дата подключения:</span>
+                      <strong class="rent__data-num">21.05.2017</strong>
+                    </div>
+                    <div class="rent__price">
+                      <span class="rent__price-caption">Итого:</span>
+                      <strong class="rent__price-sum">3 300 ₽</strong>
+                    </div>
+                  </div>
+                  <a href="#" class="rent__more button light">Подробнее</a>
+                </div>
+              </div>
+              <div class="place-rental__row">
+                <div class="calendar">
+                  <div class="calendar__top">
+                    <div class="calendar__box">
+                      <h6 class="calendar__mounth">Март</h6>
+                      <h6 class="calendar__year"> 2022</h6>
+                    </div>
+                    <div class="calendar__box">
+                      <button class="calendar__btn calendar__btn--prev"></button>
+                      <button class="calendar__btn calendar__btn--next"></button>
+                    </div>
+                  </div>
+                  <div class="calendar__inner">
+                    <div class="calendar__week">
+                      <div class="calendar__week-day">Пн</div>
+                      <div class="calendar__week-day">Вт</div>
+                      <div class="calendar__week-day">Ср</div>
+                      <div class="calendar__week-day">Чт</div>
+                      <div class="calendar__week-day">Пт</div>
+                      <div class="calendar__week-day">Сб</div>
+                      <div class="calendar__week-day">Вс</div>
+                    </div>
+                    <div class="calendar__days">
+                      <div class="calendar__day">1</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="lk-block">
+
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+          <!-- /// Аренда стойки /// -->
+
+          <div class="lk__tabs-content tabs__content" data-tabs-target="rent-rack">
+
+
+          </div>
+
+          <!-- /// Аренда сервера /// -->
+
+          <div class="lk__tabs-content tabs__content" data-tabs-target="rent-server">
+
+
+          </div>
+
+          <!-- /// Архив услуг /// -->
+
+          <div class="lk__tabs-content tabs__content" data-tabs-target="archive-service">
+
+
+          </div>
+
+        </div>
+      </div>
     </div>
   </div>
-
-
-
-  <!-- @include('html/h1.html') пример include -->
-
 </body>
 
 </html>

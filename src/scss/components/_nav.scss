@@ -3,5 +3,156 @@
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.05);
   max-width: 260px;
   width: 100%;
-  padding: 40px 25px;
+  padding: 40px 22px;
+  color: $white;
+  flex-shrink: 0;
+
+  &__title {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 17px;
+  }
+
+  &__list {
+    margin-bottom: 50px;
+  }
+
+  &__item {
+    margin-right: -22px;
+    margin-left: -22px;
+    font-weight: 500;
+    opacity: 0.5;
+    transition: background-color .2s ease-in-out, opacity .2s ease-in-out;
+
+    &:hover {
+      opacity: 1;
+      background-color: rgba(237, 249, 255, .2);
+    }
+  }
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    padding: 8px 20px 8px 60px;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 12px;
+      left: 22px;
+      width: 16px;
+      height: 16px;
+      @include bg-contain
+    }
+
+    &--services {
+      &::before {
+        background-image: url('../../img/home.svg');
+
+      }
+    }
+
+    &--union {
+      &::before {
+        background-image: url('../../img/payments.svg');
+      }
+    }
+
+    &--notification {
+      &::before {
+        background-image: url('../../img/notification-nav.svg');
+      }
+    }
+
+    &--support {
+      &::before {
+        background-image: url('../../img/support.svg');
+      }
+    }
+
+    &--docs {
+      &::before {
+        background-image: url('../../img/docs.svg');
+      }
+    }
+
+    &--profile {
+      &::before {
+        background-image: url('../../img/user-nav.svg');
+      }
+    }
+
+    &--faq {
+      &::before {
+        background-image: url('../../img/faq.svg');
+      }
+    }
+  }
+
+  &__support-list {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    padding: 20px 15px;
+    margin-bottom: 40px;
+  }
+
+  &__support-title {
+    margin-bottom: 25px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  &__support-caption {
+    font-size: 12px;
+    line-height: 16px;
+    opacity: 0.6;
+  }
+
+  &__support-link {
+    font-size: 14px;
+    line-height: 24px;
+    text-decoration: none;
+  }
+
+  &__copyright {
+    font-size: 12px;
+    line-height: 16px;
+
+    span {
+      display: block;
+    }
+  }
+}
+
+.user {
+  color: $white;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 55px;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 0;
+    background-image: url('../../img/user.svg');
+    @include bg-contain;
+    width: 36px;
+    height: 36px;
+  }
+
+  &__name {
+    font-weight: 500;
+    margin-bottom: 2px;
+  }
+
+  &__address {
+    font-size: 12px;
+    line-height: 16px;
+  }
 }

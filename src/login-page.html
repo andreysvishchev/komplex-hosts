@@ -10,22 +10,22 @@
     @include('partials/aside.html')
 
     <div class="login__inner">
-      <div class="login-tabs">
+      <div class="login-tabs tabs">
         <div class="login-tabs__buttons">
           <ul class="login-tabs__list">
             <li class="login-tabs__item">
-              <button class="login-tabs__button active" data-tabs-path="enter">
+              <button class="login-tabs__button active tabs__btn" data-tabs-path="enter">
                 Вход
               </button>
             </li>
             <li class="login-tabs__item">
-              <button class="login-tabs__button" data-tabs-path="registration">
+              <button class="login-tabs__button tabs__btn" data-tabs-path="registration">
                 Регистрация
               </button>
             </li>
           </ul>
         </div>
-        <div class="login-tabs__content active" data-tabs-target="enter">
+        <div class="login-tabs__content tabs__content active" data-tabs-target="enter">
           <form class="form" action="#">
             <h4 class="form__title">Номер телефона или e-mail</h4>
             <input type="email" class="form__input" placeholder="Введите телефон или e-mail" required>
@@ -42,7 +42,7 @@
             </div>
           </form>
         </div>
-        <div class="login-tabs__content" data-tabs-target="registration">
+        <div class="login-tabs__content tabs__content" data-tabs-target="registration">
           <form class="form" action="#">
             <h4 class="form__title">Электронная почта</h4>
             <input type="email" class="form__input" placeholder="Введите e-mail" required>
