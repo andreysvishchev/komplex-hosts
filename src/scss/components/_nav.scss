@@ -49,44 +49,44 @@
 
     &--services {
       &::before {
-        background-image: url('../../img/home.svg');
+        background-image: url('../img/home.svg');
 
       }
     }
 
     &--union {
       &::before {
-        background-image: url('../../img/payments.svg');
+        background-image: url('../img/payments.svg');
       }
     }
 
     &--notification {
       &::before {
-        background-image: url('../../img/notification-nav.svg');
+        background-image: url('../img/notification-nav.svg');
       }
     }
 
     &--support {
       &::before {
-        background-image: url('../../img/support.svg');
+        background-image: url('../img/support.svg');
       }
     }
 
     &--docs {
       &::before {
-        background-image: url('../../img/docs.svg');
+        background-image: url('../img/docs.svg');
       }
     }
 
     &--profile {
       &::before {
-        background-image: url('../../img/user-nav.svg');
+        background-image: url('../img/user-nav.svg');
       }
     }
 
     &--faq {
       &::before {
-        background-image: url('../../img/faq.svg');
+        background-image: url('../img/faq.svg');
       }
     }
   }
@@ -140,7 +140,7 @@
     position: absolute;
     top: 5px;
     left: 0;
-    background-image: url('../../img/user.svg');
+    background-image: url('../img/user.svg');
     @include bg-contain;
     width: 36px;
     height: 36px;

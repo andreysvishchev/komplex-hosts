@@ -63,7 +63,7 @@
       transform: translateX(-50%);
       width: 40px;
       height: 40px;
-      background-image: url('../../img//ok.svg');
+      background-image: url('../img/ok.svg');
       background-repeat: no-repeat;
       background-size: contain;
     }
@@ -87,7 +87,6 @@
       align-items: flex-start;
     }
   }
-
 
   &__title {
     margin-bottom: 35px;
@@ -146,13 +145,13 @@
       border-color: $red;
     }
   }
-}
 
-.graph-modal__close {
-  width: 12px;
-  height: 12px;
-  top: 15px;
-  right: 15px;
-  background-image: url('../../img/close-modal.svg');
-  @include bg-contain;
+  &__form-close {
+    width: 12px;
+    height: 12px;
+    top: 15px;
+    right: 15px;
+    background-image: url('../img/close-modal.svg');
+    @include bg-contain;
+  }
 }

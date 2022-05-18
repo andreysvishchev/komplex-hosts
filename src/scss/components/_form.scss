@@ -104,7 +104,7 @@
     right: 15px;
     width: 16px;
     height: 12px;
-    background-image: url('../../img/invisible-pasword.svg');
+    background-image: url('../img/invisible-pasword.svg');
     background-repeat: no-repeat;
     background-size: contain;
     background-color: transparent;
@@ -154,7 +154,7 @@
     &::after {
       content: '';
       position: absolute;
-      background-image: url('../../img/checkbox.svg');
+      background-image: url('../img/checkbox.svg');
       width: 15px;
       height: 14px;
       top: 50%;
@@ -264,13 +264,13 @@
 
     &--one {
       &::before {
-        background-image: url('../../img/scan-1.svg');
+        background-image: url('../img/scan-1.svg');
       }
     }
 
     &--two {
       &::before {
-        background-image: url('../../img/scan-2.svg');
+        background-image: url('../img/scan-2.svg');
       }
     }
   }
@@ -395,7 +395,7 @@
 }
 
 .choices[data-type*=select-one]::after {
-  background-image: url('../../img/arrow.svg');
+  background-image: url('../img/arrow.svg');
   width: 10px;
   height: 5px;
   border: none;

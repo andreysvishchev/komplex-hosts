@@ -53,22 +53,21 @@
 
     &--rack {
       &::before {
-        background-image: url('../../img/place.svg');
+        background-image: url('../img/place.svg');
       }
     }
 
     &--place {
       &::before {
-        background-image: url('../../img/rack.svg');
+        background-image: url('../img/rack.svg');
       }
     }
 
     &--server {
       &::before {
-        background-image: url('../../img/server.svg');
+        background-image: url('../img/server.svg');
       }
     }
-
   }
 
   &__headline {

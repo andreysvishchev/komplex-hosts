@@ -56,7 +56,7 @@
     left: 0;
     width: 25px;
     height: 20px;
-    background-image: url('../../img/balance.svg');
+    background-image: url('../img/balance.svg');
     background-repeat: no-repeat;
     background-size: contain;
   }
@@ -90,7 +90,7 @@
   &__mail {
     width: 27px;
     height: 21px;
-    background-image: url('../../img/mail.svg');
+    background-image: url('../img/mail.svg');
     @include bg-contain;
     margin-right: 25px;
     position: relative;
@@ -115,7 +115,7 @@
   &__notifications {
     width: 20px;
     height: 24px;
-    background-image: url('../../img/notification.svg');
+    background-image: url('../img/notification.svg');
     @include bg-contain;
     position: relative;
 
@@ -150,7 +150,7 @@
     left: 0;
     width: 22px;
     height: 24px;
-    background-image: url('../../img/log-out.svg');
+    background-image: url('../img/log-out.svg');
     @include bg-contain;
   }
 }

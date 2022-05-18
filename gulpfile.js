@@ -92,7 +92,9 @@ const svgSprites = () => {
 
 // scss styles
 const styles = () => {
-  return src(paths.srcScss, { sourcemaps: !isProd })
+  return src(paths.srcScss, {
+      sourcemaps: !isProd
+    })
     .pipe(plumber(
       notify.onError({
         title: "SCSS",
@@ -108,7 +110,9 @@ const styles = () => {
     .pipe(gulpif(isProd, cleanCSS({
       level: 2
     })))
-    .pipe(dest(paths.buildCssFolder, { sourcemaps: '.' }))
+    .pipe(dest(paths.buildCssFolder, {
+      sourcemaps: '.'
+    }))
     .pipe(browserSync.stream());
 };
 
@@ -328,7 +332,7 @@ exports.default = series(clean, htmlInclude, scripts, styles, resources, images,
 
 exports.backend = series(clean, htmlInclude, scriptsBackend, stylesBackend, resources, images, webpImages, avifImages, svgSprites)
 
-exports.build = series(toProd, clean, htmlInclude, scripts, styles, resources, images, webpImages, avifImages, svgSprites, htmlMinify);
+exports.build = series(toProd, clean, htmlInclude, scripts, styles, resources, images, webpImages, avifImages, svgSprites);
 
 exports.cache = series(cache, rewrite);
 

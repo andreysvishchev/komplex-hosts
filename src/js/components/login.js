@@ -11,23 +11,34 @@ paswordBtn.forEach(el => {
   })
 })
 
-document.querySelector(`[data-graph-path="registration-request"]`).addEventListener('click', (el) => {
-  el.preventDefault()
-  new GraphModal().open('registration-request')
-})
+const regBtn = document.querySelector(`[data-graph-path="registration-request"]`)
 
-document.querySelector(`[data-graph-path="password-recovery"]`).addEventListener('click', (el) => {
-  el.preventDefault()
-  new GraphModal().open('password-recovery')
-})
+if (regBtn) {
+  regBtn.addEventListener('click', (el) => {
+    el.preventDefault()
+    new GraphModal().open('registration-request')
+  })
+}
+
+const passRecoveryBtn = document.querySelector(`[data-graph-path="password-recovery"]`)
+
+if (passRecoveryBtn) {
+  passRecoveryBtn.addEventListener('click', (el) => {
+    el.preventDefault()
+    new GraphModal().open('password-recovery')
+  })
+}
+
 
 const recoveryStep1 = document.querySelector(`[data-recovery-step="1"]`)
 const recoveryStep2 = document.querySelector(`[data-recovery-step="2"]`)
 const recoveryBtnNext = document.querySelector(`[data-recovery-btn="next"]`)
 const recoveryBtnFinish = document.querySelector(`[data-recovery-btn="finish"]`)
 
-
-recoveryBtnNext.addEventListener('click', () => {
-  recoveryStep1.classList.remove('active')
-  recoveryStep2.classList.add('active')
-})
+if (recoveryBtnNext) {
+  recoveryBtnNext.addEventListener('click', (e) => {
+    e.preventDefault()
+    recoveryStep1.classList.remove('active')
+    recoveryStep2.classList.add('active')
+  })
+}

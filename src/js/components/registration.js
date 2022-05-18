@@ -70,7 +70,6 @@ const init = (parentSelector) => {
     nextStep.addEventListener('click', () => {
       if (currentStep == registrationSteps.length - 1) {
         new GraphModal().open('registration-complete');
-        currentStep = 0
         return
       }
       currentStep++

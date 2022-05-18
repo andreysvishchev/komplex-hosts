@@ -44,7 +44,7 @@
 
     &--one {
       &::before {
-        background-image: url('../../img/aside-icon-1.svg');
+        background-image: url('../img/aside-icon-1.svg');
         width: 36px;
         height: 49px;
       }
@@ -52,7 +52,7 @@
 
     &--two {
       &::before {
-        background-image: url('../../img/aside-icon-2.svg');
+        background-image: url('../img/aside-icon-2.svg');
         width: 26px;
         height: 36px;
       }
@@ -60,7 +60,7 @@
 
     &--three {
       &::before {
-        background-image: url('../../img/aside-icon-3.svg');
+        background-image: url('../img/aside-icon-3.svg');
         width: 25px;
         height: 35px;
       }
@@ -70,7 +70,7 @@
       &::before {
         width: 31px;
         height: 28px;
-        background-image: url('../../img/aside-icon-4.svg');
+        background-image: url('../img/aside-icon-4.svg');
       }
     }
   }
