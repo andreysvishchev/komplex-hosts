@@ -1,0 +1,158 @@
+.tabs {
+  &__content {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+}
+
+.button {
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background .2s ease-in-out;
+  display: inline-block;
+
+  &.light {
+    border: 1px solid $blue;
+    color: $blue;
+    background-color: transparent;
+  }
+
+  &.blue {
+    border: 1px solid transparent;
+    color: $white;
+    background-color: $blue;
+  }
+
+  &.margin-right {
+    margin-left: auto;
+    display: block;
+    margin-top: 28px;
+  }
+
+  &.end {
+    padding: 8px 13px;
+  }
+
+  &.disabled {
+    background-color: $gray;
+    pointer-events: none;
+  }
+}
+
+
+.modal {
+  &__container {
+    max-width: 530px;
+    min-height: 250px;
+    padding: 100px 75px 35px 75px;
+    background-color: $white;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 35px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 40px;
+      background-image: url('../../img//ok.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    &.modal__container--password-recovery {
+      padding: 30px 40px;
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &.modal__content--password-recovery {
+      align-items: flex-start;
+    }
+  }
+
+
+  &__title {
+    margin-bottom: 35px;
+    text-align: center;
+  }
+
+  &__btn {
+    position: static;
+    background-image: none;
+    width: auto;
+    height: auto;
+  }
+
+  &__form {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  &__form-title {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+    color: $blue;
+    margin-bottom: 24px;
+  }
+
+  &__form-caption {
+    margin-bottom: 8px;
+  }
+
+  &__form-input {
+    margin-bottom: 24px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: $black;
+    width: 100%;
+    padding: 8px 16px;
+    border: 1px solid $gray;
+    border-radius: 4px;
+    outline: none;
+    transition: all .2s ease-in-out;
+
+    &::placeholder {
+      color: $silver-text;
+    }
+
+    &:focus {
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    &--error {
+      border-color: $red;
+    }
+  }
+}
+
+.graph-modal__close {
+  width: 12px;
+  height: 12px;
+  top: 15px;
+  right: 15px;
+  background-image: url('../../img/close-modal.svg');
+  @include bg-contain;
+}

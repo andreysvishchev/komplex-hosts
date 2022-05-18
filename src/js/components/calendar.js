@@ -4,6 +4,9 @@ for (let i = 0; i < 31; i++) {
 
   const str = `<div class="calendar__day">${i}</div>`
 
-  days.innerHTML += str
+  if (days) {
+    days.innerHTML += str
+  }
+
 
 }

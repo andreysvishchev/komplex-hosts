@@ -14,7 +14,7 @@
       <!-- //// Выбор контрагента для регистрации /// -->
 
       <div class="registration__tabs">
-        <h2 class="registration__title">Регистрация контрагента</h2>
+        <h2 class="registration__title registration__title--center">Регистрация контрагента</h2>
         <div class="registration__tab" data-counterparty-path="ind">
           <div class="registration__tab-icon">
             <svg width="49" height="52" viewBox="0 0 49 52" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -791,24 +791,24 @@
         <p class="registration__error-message">Пожалуйста, проверьте
           Ваши данные</p>
       </div>
-
-      <!-- /// Модалка для завершение регистрации /// -->
-
-      <div class="graph-modal registration-modal">
-        <div class="graph-modal__container registration-modal__container" role="dialog" aria-modal="true"
-          data-graph-target="registration-complete">
-          <div class="graph-modal__content registration-modal__content">
-            <h5 class="registration-modal__title">Запрос на создание контрагента отправлен
-              в техподдержку</h5>
-            <button class="btn-reset graph-modal__close js-modal-close registration-modal__btn button blue"
-              aria-label="Закрыть модальное окно">Ок</button>
-          </div>
-        </div>
-      </div>
-
     </div>
-
   </div>
+
+  <!-- /// Модалка для завершение регистрации /// -->
+
+  <div class="graph-modal modal">
+    <div class="graph-modal__container modal__container" role="dialog" aria-modal="true"
+      data-graph-target="registration-complete">
+      <div class="graph-modal__content modal__content">
+        <h5 class="modal__title">Запрос на создание контрагента отправлен
+          в техподдержку</h5>
+        <button class="btn-reset graph-modal__close js-modal-close modal__btn button blue"
+          aria-label="Закрыть модальное окно">Ок</button>
+      </div>
+    </div>
+  </div>
+
+
 </body>
 
 </html>

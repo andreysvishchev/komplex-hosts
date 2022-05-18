@@ -1,4 +1,4 @@
-.all-services {
+.services {
   &__caption {
     margin-bottom: 10px;
   }
@@ -98,5 +98,16 @@
     &--server {
       color: $dark-blue;
     }
+  }
+
+  &__row {
+    display: flex;
+    gap: 16px;
+    max-height: 320px;
+  }
+
+  &__blocks {
+    display: grid;
+    gap: 16px;
   }
 }

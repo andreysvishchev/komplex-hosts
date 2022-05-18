@@ -27,8 +27,8 @@
         </div>
         <div class="login-tabs__content tabs__content active" data-tabs-target="enter">
           <form class="form" action="#">
-            <h4 class="form__title">Номер телефона или e-mail</h4>
-            <input type="email" class="form__input" placeholder="Введите телефон или e-mail" required>
+            <h4 class="form__title">E-mail</h4>
+            <input type="email" class="form__input" placeholder="Введите e-mail" required>
             <h4 class="form__title">Пароль</h4>
             <label class="form__label">
               <input type="password" class="form__input form__input--no-margin" placeholder="Введите пароль" required>
@@ -38,17 +38,17 @@
               <button class="button blue" type="submit">
                 Вход
               </button>
-              <a href="#" class="form__help">Забыли пароль?</a>
+              <button class="form__help" data-graph-path="password-recovery">Забыли пароль?</button>
             </div>
           </form>
         </div>
         <div class="login-tabs__content tabs__content" data-tabs-target="registration">
           <form class="form" action="#">
             <h4 class="form__title">Электронная почта</h4>
-            <input type="email" class="form__input" placeholder="Введите e-mail" required>
+            <input type="email" class="form__input" placeholder="Введите e-mail">
             <h4 class="form__title">Пароль</h4>
             <label class="form__label">
-              <input type="password" class="form__input form__input--no-margin" placeholder="Введите пароль" required>
+              <input type="password" class="form__input form__input--no-margin" placeholder="Введите пароль">
               <span class="form__pasword-type"></span>
               <p class="form__recomendation">
                 Минимальный размер пароля 8 символов, минимум один спец. символ (!@#$%^) и одна цифра
@@ -56,11 +56,10 @@
             </label>
             <h4 class="form__title">Подтвердите пароль</h4>
             <label class="form__label">
-              <input type="password" class="form__input form__input--no-margin" placeholder="Подтвердите пароль"
-                required>
+              <input type="password" class="form__input form__input--no-margin" placeholder="Подтвердите пароль">
               <span class="form__pasword-type"></span>
             </label>
-            <button class="button blue margin-right" type="submit">
+            <button class="button blue margin-right" type="submit" data-graph-path="registration-request">
               Далее
             </button>
           </form>
@@ -69,7 +68,43 @@
     </div>
   </div>
 
-  <!-- @include('html/h1.html') пример include -->
+  <!-- /// Модальное окно на запрос на регистрацю /// -->
+
+  <div class="graph-modal modal">
+    <div class="graph-modal__container modal__container" role="dialog" aria-modal="true"
+      data-graph-target="registration-request">
+      <div class="graph-modal__content modal__content">
+        <h5 class="modal__title">Письмо с подтверждением регистрации отправлено на почту</h5>
+        <button class="btn-reset graph-modal__close js-modal-close modal__btn button blue"
+          aria-label="Закрыть модальное окно">Ок</button>
+      </div>
+    </div>
+
+    <!-- /// Модальное окно на востановление пароля /// -->
+
+    <div class="graph-modal__container modal__container modal__container--password-recovery" role="dialog"
+      aria-modal="true" data-graph-target="password-recovery">
+      <div class="graph-modal__content modal__content modal__content--password-recovery">
+        <button class="btn-reset graph-modal__close js-modal-close" aria-label="Закрыть модальное окно"></button>
+        <form class="modal__form active" data-recovery-step="1">
+          <h5 class="modal__form-title">Восстановление пароля</h5>
+          <h6 class="modal__form-caption">Номер телефона или e-mail</h6>
+          <input type="text" class="modal__form-input" placeholder="Введите телефон или e-mail">
+          <button class="modal__form-btn button blue" data-recovery-btn="next">Восстановить</button>
+        </form>
+        <form class="modal__form" data-recovery-step="2">
+          <h5 class="modal__form-title">Восстановление пароля</h5>
+          <h6 class="modal__form-caption">Новый пароль</h6>
+          <input type="text" class="modal__form-input" placeholder="Подтвердите новый пароль">
+          <h6 class="modal__form-caption">Подтвердите новый пароль</h6>
+          <input type="text" class="modal__form-input" placeholder="Введите новый пароль">
+          <button class="modal__form-btn button blue" data-recovery-btn="finish">Сменить пароль</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
 </body>
 
 </html>

@@ -36,7 +36,7 @@
     }
 
     &--error {
-      background-color: $red;
+      border-color: $red;
     }
 
     &--no-margin {
@@ -69,9 +69,25 @@
     }
   }
 
+  &__row {
+    display: flex;
+
+    &--enter {
+      margin-top: 28px;
+      align-items: center;
+    }
+
+    &--agreement {
+      margin-top: 28px;
+    }
+  }
+
   &__help {
     color: $blue;
     margin-left: 24px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
   }
 
   &__recomendation {
@@ -84,7 +100,7 @@
 
   &__pasword-type {
     position: absolute;
-    top: 13px;
+    top: 16px;
     right: 15px;
     width: 16px;
     height: 12px;
@@ -117,20 +133,7 @@
     }
 
     &--error {
-      background-color: $red;
-    }
-  }
-
-  &__row {
-    display: flex;
-
-    &--enter {
-      margin-top: 28px;
-      align-items: center;
-    }
-
-    &--agreement {
-      margin-top: 27px;
+      border-color: $red;
     }
   }
 
@@ -239,8 +242,6 @@
   &__radio-input:checked+.form__radio-span::before {
     opacity: 1;
   }
-
-
 
   &__additional-address {
     display: none;
@@ -405,4 +406,11 @@
 .choices[data-type*=select-one].is-open::after {
   margin-top: 0;
   transform: rotate(0deg);
+}
+
+.choices .choices__list .choices__list .choices__item--disabled {
+  text-indent: -9999px;
+  height: 0;
+  width: 0;
+  padding: 0;
 }
