@@ -30,4 +30,4 @@ const initLoginTabs = (parentSelector) => {
 }
 
 initLoginTabs('.login__inner')
-initLoginTabs('.lk__content')
+initLoginTabs('.services')

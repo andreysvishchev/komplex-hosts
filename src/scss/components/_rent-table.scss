@@ -1,0 +1,46 @@
+.rent-table {
+  border-radius: 4px;
+  border: 1px solid $gray;
+  margin-bottom: 25px;
+
+  &__captions {
+    padding: 8px 19px;
+    background-color: $table-caption;
+    border-bottom: 1px solid $gray;
+    border-radius: 4px 4px 0px 0px;
+    display: grid;
+    grid-template-columns: 50% 15% 15% 20%;
+    gap: 15px;
+  }
+
+  &__caption {
+    font-weight: 500;
+    color: $silver-text;
+  }
+
+  &__row {
+    margin: 8px 19px;
+    display: grid;
+    grid-template-columns: 50% 15% 15% 20%;
+    gap: 15px;
+  }
+
+  &__column {
+    &.service-price {
+      font-weight: 500;
+    }
+
+    &.service-sum {
+      font-weight: 600;
+      color: $dark-blue;
+    }
+
+    &.service-name {
+      span {
+        display: inline-block;
+        margin-left: 5px;
+        color: $blue;
+      }
+    }
+  }
+}

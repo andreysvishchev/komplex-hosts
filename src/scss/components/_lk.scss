@@ -8,38 +8,4 @@
     background-color: $bg;
     width: 100%;
   }
-
-  &__tabs-list {
-    display: flex;
-    align-items: center;
-    margin-bottom: 22px;
-    min-height: 35px;
-  }
-
-  &__tabs-item {
-
-
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-
-  &__tabs-button {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 16px;
-    color: $black;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    transition: all .2s ease-in-out;
-    padding: 9px 8px;
-    margin-right: 22px;
-
-    &.active {
-      background-color: $dark-blue;
-      color: $white;
-      border-radius: 4px;
-    }
-  }
 }

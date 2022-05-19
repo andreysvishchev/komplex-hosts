@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html')
+
+<body class="page__body">
+  @include('partials/header.html')
+  <div class="lk">
+    <div class="lk__inner">
+      @include('partials/nav.html')
+      <div class="lk__content">
+        <div class="services">
+          <div class="services__tabs tabs">
+
+            <ul class="services__tabs-list">
+              <li class="services__tabs-item">
+                <button class="services__tabs-button tabs__btn active" data-tabs-path="all-services">Все услуги</button>
+              </li>
+              <li class="services__tabs-item">
+                <button class="services__tabs-button tabs__btn" data-tabs-path="rent-place">Аренда места</button>
+              </li>
+              <li class="services__tabs-item">
+                <button class="services__tabs-button tabs__btn" data-tabs-path="rent-rack">Аренда стойки </button>
+              </li>
+              <li class="services__tabs-item">
+                <button class="services__tabs-button tabs__btn" data-tabs-path="rent-server">Аренда сервера</button>
+              </li>
+              <li class="services__tabs-item">
+                <button class="services__tabs-button tabs__btn" data-tabs-path="archive-service">Архив услуг</button>
+              </li>
+            </ul>
+
+            @include('partials/all-services.html')
+
+            @include('partials/rent-place.html')
+
+            @include('./partials/rent-rack.html')
+
+            @include('./partials/rent-server.html')
+
+            @include('./partials/archive-service.html')
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
