@@ -1,0 +1,42 @@
+.confidant-table {
+  &__captions {
+    grid-template-columns: 1fr 240px 160px 70px;
+  }
+
+  &__row {
+    grid-template-columns: 1fr 240px 160px 70px;
+    position: relative;
+
+    &.isOpen .confidant-table__btn {
+      span {
+        background-color: $dark-blue;
+      }
+    }
+
+    &.isOpen .confidant-table__menu {
+      display: block;
+    }
+
+    &.isOpen {
+      z-index: 3;
+    }
+  }
+
+  &__btn {
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+
+    span {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: $gray;
+      margin: 0 3px;
+      transition: background-color .2s ease-in-out;
+    }
+  }
+}

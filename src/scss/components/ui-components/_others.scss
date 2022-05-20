@@ -1,0 +1,45 @@
+.tabs {
+  &__content {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+}
+
+.button {
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background .2s ease-in-out;
+  display: inline-block;
+
+  &.light {
+    border: 1px solid $blue;
+    color: $blue;
+    background-color: transparent;
+  }
+
+  &.blue {
+    border: 1px solid transparent;
+    color: $white;
+    background-color: $blue;
+  }
+
+  &.margin-right {
+    margin-left: auto;
+    display: block;
+    margin-top: 28px;
+  }
+
+  &.end {
+    padding: 8px 13px;
+  }
+
+  &.disabled {
+    background-color: $gray;
+    pointer-events: none;
+  }
+}

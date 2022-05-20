@@ -1,0 +1,28 @@
+.rent-table {
+  &__captions {
+    grid-template-columns: 50% 15% 15% 20%;
+  }
+
+  &__row {
+    grid-template-columns: 50% 15% 15% 20%;
+  }
+
+  &__column {
+    &.service-price {
+      font-weight: 500;
+    }
+
+    &.service-sum {
+      font-weight: 600;
+      color: $dark-blue;
+    }
+
+    &.service-name {
+      span {
+        display: inline-block;
+        margin-left: 5px;
+        color: $blue;
+      }
+    }
+  }
+}

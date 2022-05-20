@@ -1,0 +1,202 @@
+<h4 class=" registration__title">Регистрация контрагента</h4>
+<ul class="registration__progress-list">
+  <li class="registration__progress-item active"></li>
+  <li class="registration__progress-item"></li>
+  <li class="registration__progress-item"></li>
+  <li class="registration__progress-item"></li>
+  <li class="registration__progress-item"></li>
+</ul>
+<h5 class="registration__counterparty">Индивидуальный предприниматель</h5>
+<div class="registration__steps">
+  <div class="registration__step active">
+    <h6 class="registration__headline">Введите информацию об ИП</h6>
+    <form action="#" class="form">
+      <h4 class="form__title">ИНН</h4>
+      <input type="text" class="form__input" placeholder="Номер ИНН" required>
+      <button class="form__inn">Заполнить по ИНН</button>
+      <h4 class="form__title">Наименование ИП</h4>
+      <input type="text" class="form__input" placeholder="Введите название" required>
+      <h4 class="form__title">Фамилия</h4>
+      <input type="text" class="form__input" placeholder="Введите фамилию" required>
+      <h4 class="form__title">Имя</h4>
+      <input type="text" class="form__input" placeholder="Введите имя" required>
+      <h4 class="form__title">Отчество</h4>
+      <input type="text" class="form__input" placeholder="Введите отчество" required>
+    </form>
+  </div>
+  <div class="registration__step">
+    <h6 class="registration__headline">Введите адрес регистрации</h6>
+    <form action="#" id="regForm" class="form">
+      <div class="form__row">
+        <div class="form__column form__column--index">
+          <h4 class="form__title">Индекс</h4>
+          <input type="text" class="form__input form__input--index" placeholder="_ _ _ _ _ _" required>
+        </div>
+        <div class="form__column form__column--select">
+          <h4 class="form__title">Страна</h4>
+          @include('../ui-elements/select.html')
+        </div>
+      </div>
+      <h4 class="form__title">Область</h4>
+      @include('../ui-elements/select.html')
+      <h4 class="form__title">Район/Округ</h4>
+      @include('../ui-elements/select.html')
+      <h4 class="form__title">Населенный пункт</h4>
+      @include('../ui-elements/select.html')
+      <h4 class="form__title">Улица</h4>
+      <input type="text" class="form__input" placeholder="Введите улицу" required>
+      <h4 class="form__title">Дом</h4>
+      <input type="text" class="form__input " placeholder="Номер дома" required>
+      <div class="form__row">
+        <div class="form__column">
+          <h4 class="form__title">Корпус</h4>
+          <input type="text" class="form__input " placeholder="Номер корпуса" required>
+        </div>
+        <div class="form__column form__column--margin-left">
+          <h4 class="form__title">Квартира/офис</h4>
+          <input type="text" class="form__input" placeholder="Номер квартиры/офиса" required>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="registration__step">
+    <h6 class="registration__headline">Почтовый адрес совпадает с адресом регистрации?</h6>
+    <form action="#" class="form">
+      <div class="form__radios">
+        <label class="form__radio">
+          <input type="radio" checked name="addres-registration" class="form__radio-input visually-hidden"
+            data-add-address="true">
+          <span class="form__radio-span"></span>
+          <span class="form__radio-title">Да</span>
+        </label>
+        <label class="form__radio">
+          <input type="radio" name="addres-registration" data-add-address="false"
+            class="form__radio-input visually-hidden">
+          <span class="form__radio-span"></span>
+          <span class="form__radio-title">Нет</span>
+        </label>
+      </div>
+      <div class="form__additional-address">
+        <h6 class="registration__headline">Введите адрес регистрации</h6>
+        <div class="form__row">
+          <div class="form__column form__column--index">
+            <h4 class="form__title">Индекс</h4>
+            <input type="text" class="form__input form__input--index" placeholder="_ _ _ _ _ _" required>
+          </div>
+          <div class="form__column form__column--select">
+            <h4 class="form__title">Страна</h4>
+            @include('../ui-elements/select.html')
+          </div>
+        </div>
+        <h4 class="form__title">Область</h4>
+        @include('../ui-elements/select.html')
+        <h4 class="form__title">Район/Округ</h4>
+        @include('../ui-elements/select.html')
+        <h4 class="form__title">Населенный пункт</h4>
+        @include('../ui-elements/select.html')
+        <h4 class="form__title">Улица</h4>
+        <input type="text" class="form__input" placeholder="Введите улицу" required>
+        <h4 class="form__title">Дом</h4>
+        <input type="text" class="form__input " placeholder="Номер дома" required>
+        <div class="form__row">
+          <div class="form__column">
+            <h4 class="form__title">Корпус</h4>
+            <input type="text" class="form__input " placeholder="Номер корпуса" required>
+          </div>
+          <div class="form__column form__column--margin-left">
+            <h4 class="form__title">Квартира/офис</h4>
+            <input type="text" class="form__input" placeholder="Номер квартиры/офиса" required>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="registration__step">
+    <h6 class="registration__headline">Введите реквизиты</h6>
+    <form action="#" id="regForm" class="form">
+      <h4 class="form__title">Наименование банка</h4>
+      <input type="text" class="form__input form__input--index" placeholder="Введите название" required>
+      <h4 class="form__title">Расчетный счет</h4>
+      <input type="text" class="form__input form__input--index" placeholder="Номер рас/сч" required>
+      <h4 class="form__title">Корреспондентский счет</h4>
+      <input type="text" class="form__input form__input--index" placeholder="Номер кор/сч" required>
+      <div class="form__row">
+        <div class="form__column form__column--index">
+          <h4 class="form__title">Индекс</h4>
+          <input type="text" class="form__input form__input--index" placeholder="_ _ _ _ _ _" required>
+        </div>
+        <div class="form__column form__column--select">
+          <h4 class="form__title">Страна</h4>
+          @include('../ui-elements/select.html')
+        </div>
+      </div>
+      <h4 class="form__title">Область</h4>
+      @include('../ui-elements/select.html')
+      <h4 class="form__title">Район/Округ</h4>
+      @include('../ui-elements/select.html')
+      <h4 class="form__title">Населенный пункт</h4>
+      @include('../ui-elements/select.html')
+      <h4 class="form__title">Улица</h4>
+      <input type="text" class="form__input" placeholder="Введите улицу" required>
+      <div class="form__row">
+        <div class="form__column">
+          <h4 class="form__title">Дом</h4>
+          <input type="text" class="form__input " placeholder="Номер дома" required>
+        </div>
+        <div class="form__column form__column--margin-left">
+          <h4 class="form__title">Корпус</h4>
+          <input type="text" class="form__input " placeholder="Номер корпуса" required>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="registration__step">
+    <h6 class="registration__headline">Введите контактное лицо <a href="#">по техническим вопросам</a></h6>
+    <form action="#" class="form">
+      <h4 class="form__title">Фамилия</h4>
+      <input type="text" class="form__input" placeholder="Введите фамилию" required>
+      <h4 class="form__title">Имя</h4>
+      <input type="text" class="form__input" placeholder="Введите имя" required>
+      <h4 class="form__title">Отчество</h4>
+      <input type="text" class="form__input" placeholder="Введите отчество" required>
+      <h4 class="form__title">Электронная почта</h4>
+      <input type="text" class="form__input" placeholder="Введите e-mail" required>
+      <h4 class="form__title">Номер телефона</h4>
+      <input type="text" class="form__input" placeholder="Введите телефон" required>
+    </form>
+    <h6 class="registration__headline registration__headline--margin-top">Введите контактное лицо <a href="#">по
+        техническим
+        вопросам</a></h6>
+    <form action="#" class="form">
+      <h4 class="form__title">Фамилия</h4>
+      <input type="text" class="form__input" placeholder="Введите фамилию" required>
+      <h4 class="form__title">Имя</h4>
+      <input type="text" class="form__input" placeholder="Введите имя" required>
+      <h4 class="form__title">Отчество</h4>
+      <input type="text" class="form__input" placeholder="Введите отчество" required>
+      <h4 class="form__title">Электронная почта</h4>
+      <input type="text" class="form__input" placeholder="Введите e-mail" required>
+      <h4 class="form__title">Номер телефона</h4>
+      <input type="text" class="form__input" placeholder="Введите телефон" required>
+      <div class="form__row form__row--agreement">
+        <label class="form__checkbox">
+          <input class="form__checkbox-input visually-hidden" type="checkbox" data-inpt="check">
+          <span class="form__checkbox-span"></span>
+        </label>
+        <p class="form__agreement">
+          Я принимаю условия <a href="#">Пользовательского соглашения</a> и даю своё согласие Komplex-Host
+          на обработку моей персональной информации
+          на условиях, определенных <a href="#"> Политикой конфиденциальности.</a>
+        </p>
+      </div>
+    </form>
+  </div>
+  <div class="registration__buttons">
+    <button class="button registration__button light prev-btn">
+      Назад
+    </button>
+    <button class="button registration__button blue next-btn">
+      Далее
+    </button>
+  </div>
+</div>

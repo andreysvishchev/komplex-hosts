@@ -1,0 +1,13 @@
+.equip-table {
+  &__captions {
+    grid-template-columns: 20% 40% 40%;
+  }
+
+  &__row {
+    grid-template-columns: 20% 40% 40%;
+
+    &.hiden {
+      display: none;
+    }
+  }
+}

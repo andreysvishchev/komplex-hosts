@@ -1,0 +1,89 @@
+.pagination {
+  display: none;
+
+  &.isOpen {
+    display: block;
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__block {
+    display: flex;
+    align-items: center;
+  }
+
+  &__hide {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: $blue;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    text-decoration: underline;
+    margin-right: 15px;
+  }
+
+  &__amount {
+    font-weight: 500;
+    color: $silver-text;
+
+    span {
+      display: inline-block;
+      margin: 0 1px;
+    }
+  }
+
+  &__pages {
+    font-weight: 500;
+    color: $silver-text;
+    margin-right: 20px;
+
+    span {
+      display: inline-block;
+      margin: 0 1px;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  &__btn {
+    width: 26px;
+    height: 26px;
+    border: 1px solid $gray;
+    border-radius: 2px;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: border-color .2s ease-in-out;
+    cursor: pointer;
+
+    svg {
+      path {
+        transition: all .2s ease-in-out;
+      }
+
+    }
+
+    &:hover {
+      border-color: $blue;
+    }
+
+    &:hover {
+      svg {
+        path {
+          fill: $blue;
+        }
+      }
+    }
+  }
+}

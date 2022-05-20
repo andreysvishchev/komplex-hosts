@@ -1,0 +1,114 @@
+<h4 class="registration__title">Регистрация контрагента</h4>
+<ul class="registration__progress-list">
+  <li class="registration__progress-item active"></li>
+  <li class="registration__progress-item"></li>
+  <li class="registration__progress-item"></li>
+</ul>
+<h5 class="registration__counterparty">Физическое лицо</h5>
+<div class="registration__steps">
+  <div class="registration__step active">
+    <h6 class="registration__headline">Введите информацию о себе</h6>
+    <form action="#" class="form">
+      <h4 class="form__title">Фамилия</h4>
+      <input type="text" class="form__input" placeholder="Введите фамилию" required>
+      <h4 class="form__title">Имя</h4>
+      <input type="text" class="form__input" placeholder="Введите имя" required>
+      <h4 class="form__title">Отчество</h4>
+      <input type="text" class="form__input" placeholder="Введите отчество" required>
+      <h4 class="form__title">Дата рождения</h4>
+      <input type="text" class="form__input" placeholder="ДД.ММ.ГГГГ" required>
+      <h4 class="form__title">Номер телефона</h4>
+      <input type="text" class="form__input" placeholder="Введите телефон" required>
+    </form>
+  </div>
+  <div class="registration__step">
+    <h6 class="registration__headline">Введите паспортные данные</h6>
+    <form action="#" class="form">
+      <div class="form__row">
+        <div class="form__column form__column--series ">
+          <h4 class="form__title">Серия</h4>
+          <input type="text" class="form__input" placeholder="_ _ _ _" required id="passport-series">
+        </div>
+        <div class="form__column">
+          <h4 class="form__title">Номер</h4>
+          <input type="text" class="form__input" placeholder="_ _ _ _ _ _" required id="passport-number">
+        </div>
+      </div>
+      <h4 class="form__title">Кем выдан</h4>
+      <textarea class="form__textarea" name="#" placeholder="Введите кем выдан паспорт" required></textarea>
+      <h4 class="form__title">Дата выдачи</h4>
+      <input type="text" class="form__input" placeholder="ДД.ММ.ГГГГ" required>
+      <h4 class="form__title">ИНН</h4>
+      <input type="text" class="form__input" placeholder="Номер ИНН" required>
+      <h4 class="form__title">Скан паспорта</h4>
+      <div class="form__scan">
+        <div class="form__file form__file--one">
+          <h5 class="form__file-title">Скан разворота</h5>
+          <input class="form__file-input visually-hidden" id="passport-scan-1" type="file" name="passport-scan">
+          <label for="passport-scan-1" class="form__file-label">Добавить</label>
+          <span class="form__file-clear">х</span>
+        </div>
+      </div>
+      <div class="form__scan">
+        <div class="form__file form__file--two">
+          <h5 class="form__file-title">Скан прописки</h5>
+          <input class="form__file-input visually-hidden" id="passport-scan-2" type="file">
+          <label for="passport-scan-2" class="form__file-label">Добавить</label>
+          <span class="form__file-clear">х</span>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="registration__step">
+    <h6 class="registration__headline">Введите адрес регистрации</h6>
+    <form action="#" id="regForm" class="form">
+      <div class="form__row">
+        <div class="form__column form__column--index">
+          <h4 class="form__title">Индекс</h4>
+          <input type="text" class="form__input form__input--index" placeholder="_ _ _ _ _ _" required>
+        </div>
+        <div class="form__column form__column--select">
+          <h4 class="form__title">Страна</h4>
+          @include('../ui-elements/select.html')
+        </div>
+      </div>
+      <h4 class="form__title">Область</h4>
+      @include('../ui-elements/select.html')
+      <h4 class="form__title">Район/Округ</h4>
+      @include('../ui-elements/select.html')
+      <h4 class="form__title">Населенный пункт</h4>
+      @include('../ui-elements/select.html')
+      <h4 class="form__title">Улица</h4>
+      <input type="text" class="form__input" placeholder="Введите улицу" required>
+      <div class="form__row">
+        <div class="form__column form__column--home">
+          <h4 class="form__title">Дом</h4>
+          <input type="text" class="form__input " placeholder="Номер дома" required>
+        </div>
+        <div class="form__column">
+          <h4 class="form__title">Квартира</h4>
+          <input type="text" class="form__input" placeholder="Номер квартиры" required>
+        </div>
+      </div>
+      <div class="form__row form__row--agreement">
+        <label class="form__checkbox">
+          <input class="form__checkbox-input visually-hidden" type="checkbox" data-inpt="check">
+          <span class="form__checkbox-span"></span>
+        </label>
+        <p class="form__agreement">
+          Я принимаю условия <a href="#">Пользовательского соглашения</a> и даю своё согласие Komplex-Host
+          на обработку моей персональной информации
+          на условиях, определенных <a href="#"> Политикой конфиденциальности.</a>
+        </p>
+      </div>
+    </form>
+  </div>
+  <div class="registration__buttons">
+    <button class="button registration__button light prev-btn">
+      Назад
+    </button>
+    <button class="button registration__button blue next-btn">
+      Далее
+    </button>
+  </div>
+</div>

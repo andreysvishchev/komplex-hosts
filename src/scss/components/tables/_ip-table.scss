@@ -1,0 +1,11 @@
+.ip-table {
+  width: 100%;
+
+  &__captions {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

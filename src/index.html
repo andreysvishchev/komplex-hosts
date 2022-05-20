@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/page-components/head.html')
+
+<body class="page__body">
+
+  @include('partials/page-components/header.html')
+
+  <div class="lk">
+    <div class="lk__inner">
+      @include('partials/page-components/nav.html')
+      <div class="lk__content">
+        <div class="services">
+          <div class="services__tabs tabs">
+            <ul class="services__tabs-list">
+              <li class="services__tabs-item">
+                <button class="services__tabs-button tabs__btn active" data-tabs-path="all-services">Все услуги</button>
+              </li>
+              <li class="services__tabs-item">
+                <button class="services__tabs-button tabs__btn" data-tabs-path="rent-place">Аренда места</button>
+              </li>
+              <li class="services__tabs-item">
+                <button class="services__tabs-button tabs__btn" data-tabs-path="rent-rack">Аренда стойки </button>
+              </li>
+              <li class="services__tabs-item">
+                <button class="services__tabs-button tabs__btn" data-tabs-path="rent-server">Аренда сервера</button>
+              </li>
+              <li class="services__tabs-item">
+                <button class="services__tabs-button tabs__btn" data-tabs-path="archive-service">Архив услуг</button>
+              </li>
+            </ul>
+
+
+            <div class="lk__tabs-content tabs__content active" data-tabs-target="all-services">
+              <h5 class="services__caption">У Вас нет подключенных услуг.</h5>
+              <h5 class="services__caption">Вы можете подключить:</h5>
+              <div class="services__items">
+                <div class="services__item services__item--place">
+                  <div class="services__icon services__icon--place"></div>
+                  <div class="services__info">
+                    <h5 class="services__headline">Аренда места</h5>
+                    <button class="services__btn services__btn--place">Подключить</button>
+                  </div>
+                </div>
+                <div class="services__item services__item--rack">
+                  <div class="services__icon services__icon--rack"></div>
+                  <div class="services__info">
+                    <h5 class="services__headline">Аренда стойки</h5>
+                    <button class="services__btn services__btn--rack">Подключить</button>
+                  </div>
+                </div>
+                <div class="services__item services__item--server">
+                  <div class="services__icon services__icon--server"></div>
+                  <div class="services__info">
+                    <h5 class="services__headline">Аренда сервера</h5>
+                    <button class="services__btn services__btn--server">Подключить</button>
+                  </div>
+                </div>
+              </div>
+              <div class="services__blocks">
+                @include('partials/service-blocks/rent-place-block.html', {
+                "caption" : "Аренда места"
+                } )
+                @include('partials/service-blocks/rent-place-block.html', {
+                "caption" : "Аренда стойки"
+                })
+              </div>
+            </div>
+
+            <div class="lk__tabs-content tabs__content" data-tabs-target="rent-place">
+              <div class="services__blocks">
+                @include('partials/service-blocks/rent-place-block.html', {
+                "caption" : "Аренда места"
+                } )
+                <div class="services__row">
+                  @include('partials/ui-elements/calendar.html')
+                  @include('partials/service-blocks/notes.html')
+                </div>
+                @include('partials/service-blocks/equip-block.html')
+                @include('partials/service-blocks/confidant-block.html')
+                @include('partials/service-blocks/ip-block.html')
+              </div>
+            </div>
+
+            <div class="lk__tabs-content tabs__content" data-tabs-target="rent-rack">
+              <div class="services__blocks">
+                @include('partials/service-blocks/rent-place-block.html', {
+                "caption" : "Стойки"
+                } )
+                <div class="services__row">
+                  @include('partials/ui-elements/calendar.html')
+                  @include('partials/service-blocks/notes.html')
+                </div>
+                @include('partials/service-blocks/equip-block.html')
+                @include('partials/service-blocks/confidant-block.html')
+                @include('partials/service-blocks/ip-block.html')
+              </div>
+            </div>
+
+            <div class="lk__tabs-content tabs__content" data-tabs-target="rent-server">
+              <div class="services__blocks">
+                @loop('partials/service-blocks/rents-server-block.html', [
+                {'caption': 'Аренда сервера'},
+                {'caption': 'Аренда сервера'},
+                ])
+              </div>
+            </div>
+
+            <div class="lk__tabs-content tabs__content" data-tabs-target="archive-service">
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

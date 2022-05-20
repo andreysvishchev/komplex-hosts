@@ -4,18 +4,30 @@
 @import "settings";
 
 
-@import "./components/header";
-@import "./components/assets";
-@import "./components/login";
-@import "./components/aside";
-@import "./components/form";
-@import "./components/registration";
-@import "./components/nav";
-@import "./components/lk";
-@import "./components/services";
-@import "./components/calendar";
-@import "./components/lk-block";
-@import "./components/rent-table";
-@import "./components/notes";
-@import "./components/equip-table";
-@import "./components/confidant-table";
+@import "./components/pages/login";
+@import "./components/pages/lk";
+@import "./components/pages/registration";
+@import "./components/pages/services";
+
+
+@import "./components/page-elements/aside";
+@import "./components/page-elements/header";
+@import "./components/page-elements/nav";
+
+
+@import "./components/tables/table";
+@import "./components/tables/equip-table";
+@import "./components/tables/confidant-table";
+@import "./components/tables/rent-table";
+@import "./components/tables/ip-table";
+
+
+@import "./components/ui-components/others";
+@import "./components/ui-components/modal";
+@import "./components/ui-components/pagination";
+@import "./components/ui-components/search";
+@import "./components/ui-components/calendar";
+@import "./components/ui-components/lk-block";
+@import "./components/ui-components/notes";
+@import "./components/ui-components/form";
+@import "./components/ui-components/context-menu";
